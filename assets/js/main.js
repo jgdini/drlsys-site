@@ -19,7 +19,7 @@
 
   var nav = document.getElementById("nav");
   var pageProgress = document.getElementById("pageProgress");
-  var scrub = document.getElementById("servicos");
+  var scrub = document.getElementById("tour");
   var layers = Array.prototype.slice.call(document.querySelectorAll(".photo-layer"));
   var panels = Array.prototype.slice.call(document.querySelectorAll(".panel"));
   var dots = Array.prototype.slice.call(document.querySelectorAll(".dot"));
@@ -137,6 +137,10 @@
       title: "Veeam Backup",
       desc: "Software especializado em backup e recuperação de dados de servidores físicos e virtuais. Garante que, se algo der errado, a empresa recupera as informações rapidamente, sem depender de sorte."
     },
+    "zimbra": {
+      title: "Zimbra",
+      desc: "Plataforma de e-mail corporativo, agenda e colaboração, com opção de hospedagem própria. A DRLSYS opera e protege ambientes Zimbra, incluindo backup e segurança de e-mail dedicados através do nosso serviço Synergy Mail Guardian."
+    },
     "pfsense": {
       title: "pfSense",
       desc: "Sistema de firewall e roteador de código aberto, usado para proteger e controlar o tráfego de rede da empresa — com VPN, filtro de conteúdo e regras de segurança configuráveis."
@@ -181,4 +185,34 @@
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeTechModal();
   });
+
+  /**
+   * Counting-up stat animation — plays once when a [data-count-to] element
+   * scrolls into view, easing from 0 to its target number. Suffix (e.g. " min",
+   * "%") is preserved via data-count-suffix so the element still reads correctly
+   * before JS runs / with JS disabled.
+   */
+  var countEls = Array.prototype.slice.call(document.querySelectorAll("[data-count-to]"));
+  if (countEls.length && "IntersectionObserver" in window) {
+    var countObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        countObserver.unobserve(el);
+        var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
+        var suffix = el.getAttribute("data-count-suffix") || "";
+        var duration = 1200;
+        var start = null;
+        function step(ts) {
+          if (start === null) start = ts;
+          var t = clamp((ts - start) / duration, 0, 1);
+          var eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+          el.textContent = Math.round(target * eased) + suffix;
+          if (t < 1) window.requestAnimationFrame(step);
+        }
+        window.requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    countEls.forEach(function (el) { countObserver.observe(el); });
+  }
 })();
