@@ -61,9 +61,20 @@
     var p = scrubProgress();
     var activeIdx = Math.round(p * (UNIT_COUNT - 1));
 
-    // photo crossfade + Ken Burns zoom on the active layer
+    // photo/video crossfade + Ken Burns zoom on the active layer.
+    // Only the active clip actually plays — the rest stay paused so six looping
+    // videos in the DOM don't all burn CPU/battery at once.
     layers.forEach(function (layer, i) {
-      layer.classList.toggle("is-active", i === activeIdx);
+      var active = i === activeIdx;
+      layer.classList.toggle("is-active", active);
+      if (layer.tagName === "VIDEO") {
+        if (active) {
+          var playPromise = layer.play();
+          if (playPromise && playPromise.catch) playPromise.catch(function () {});
+        } else {
+          layer.pause();
+        }
+      }
     });
 
     // panel crossfade (synced to the same index)

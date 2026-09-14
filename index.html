@@ -25,6 +25,8 @@
 </nav>
 
 <header class="hero" id="top">
+  <video class="hero__video" poster="assets/video/posters/hero.jpg" src="assets/video/hero.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+  <div class="hero__video-overlay" aria-hidden="true"></div>
   <div class="hero__beam" aria-hidden="true"></div>
   <div class="hero__grid" aria-hidden="true"></div>
   <div class="glass-field" aria-hidden="true">
@@ -141,14 +143,15 @@
     </div>
 
     <div class="photo-stack" id="photoStack" aria-hidden="true">
-      <!-- Real photos (free Unsplash license), color-graded to the site's blue palette via CSS.
-           unit index → photo, matched loosely to each service section below. -->
-      <div class="photo-layer is-active" data-unit="0" style="background-image:url('https://images.unsplash.com/photo-1580106815433-a5b1d1d53d85?q=80&amp;w=1600&amp;auto=format&amp;fit=crop')"></div>
-      <div class="photo-layer" data-unit="1" style="background-image:url('https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?q=80&amp;w=1600&amp;auto=format&amp;fit=crop')"></div>
-      <div class="photo-layer" data-unit="2" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=1600&amp;auto=format&amp;fit=crop')"></div>
-      <div class="photo-layer" data-unit="3" style="background-image:url('https://images.unsplash.com/photo-1580106815433-a5b1d1d53d85?q=80&amp;w=1600&amp;auto=format&amp;fit=crop'); background-position: 70% 50%;"></div>
-      <div class="photo-layer" data-unit="4" style="background-image:url('https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?q=80&amp;w=1600&amp;auto=format&amp;fit=crop'); background-position: 30% 50%;"></div>
-      <div class="photo-layer" data-unit="5" style="background-image:url('https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&amp;w=1600&amp;auto=format&amp;fit=crop')"></div>
+      <!-- AI-generated cinematic clips (Higgsfield), color-graded to the site's blue palette via CSS.
+           unit index → clip, matched to each service section below. main.js plays/pauses these
+           based on scroll position, same crossfade logic that used to drive the static photos. -->
+      <video class="photo-layer is-active" data-unit="0" poster="assets/video/posters/unit0-servidores.jpg" src="assets/video/unit0-servidores.mp4" autoplay muted loop playsinline preload="auto"></video>
+      <video class="photo-layer" data-unit="1" poster="assets/video/posters/unit1-redes.jpg" src="assets/video/unit1-redes.mp4" muted loop playsinline preload="auto"></video>
+      <video class="photo-layer" data-unit="2" poster="assets/video/posters/unit2-seguranca.jpg" src="assets/video/unit2-seguranca.mp4" muted loop playsinline preload="auto"></video>
+      <video class="photo-layer" data-unit="3" poster="assets/video/posters/unit3-backup.jpg" src="assets/video/unit3-backup.mp4" muted loop playsinline preload="auto"></video>
+      <video class="photo-layer" data-unit="4" poster="assets/video/posters/unit4-suporte.jpg" src="assets/video/unit4-suporte.mp4" muted loop playsinline preload="auto"></video>
+      <video class="photo-layer" data-unit="5" poster="assets/video/posters/unit5-sites.jpg" src="assets/video/unit5-sites.mp4" muted loop playsinline preload="auto"></video>
       <div class="photo-stack__grade" aria-hidden="true"></div>
       <div class="photo-stack__vignette" aria-hidden="true"></div>
     </div>
@@ -225,14 +228,15 @@
     <div class="scrub__gallery" aria-hidden="true">
       <span class="scrub__gallery-label" id="galleryLabel">EM CAMPO</span>
       <div class="gallery-frame">
-        <!-- one image per service section (data-unit matches .panel/.photo-layer), so the photo
-             here is always topically related to whichever service is active — not a random rotation. -->
-        <span class="gallery-frame__img is-active" data-unit="0" style="background-image:url('https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?q=80&amp;w=800&amp;auto=format&amp;fit=crop')"></span>
-        <span class="gallery-frame__img" data-unit="1" style="background-image:url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&amp;w=800&amp;auto=format&amp;fit=crop')"></span>
-        <span class="gallery-frame__img" data-unit="2" style="background-image:url('https://images.unsplash.com/photo-1581092919535-7146ff1a590b?q=80&amp;w=800&amp;auto=format&amp;fit=crop')"></span>
-        <span class="gallery-frame__img" data-unit="3" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&amp;w=800&amp;auto=format&amp;fit=crop')"></span>
-        <span class="gallery-frame__img" data-unit="4" style="background-image:url('https://images.unsplash.com/photo-1537511446984-935f663eb1f4?q=80&amp;w=800&amp;auto=format&amp;fit=crop')"></span>
-        <span class="gallery-frame__img" data-unit="5" style="background-image:url('https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&amp;w=800&amp;auto=format&amp;fit=crop')"></span>
+        <!-- one still per service section (data-unit matches .panel/.photo-layer), pulled from the
+             same AI-generated clips playing in the main frame — so the photo here is always the
+             topically related, on-brand shot, not a random Unsplash rotation. -->
+        <span class="gallery-frame__img is-active" data-unit="0" style="background-image:url('assets/video/gallery/unit0-servidores.jpg')"></span>
+        <span class="gallery-frame__img" data-unit="1" style="background-image:url('assets/video/gallery/unit1-redes.jpg')"></span>
+        <span class="gallery-frame__img" data-unit="2" style="background-image:url('assets/video/gallery/unit2-seguranca.jpg')"></span>
+        <span class="gallery-frame__img" data-unit="3" style="background-image:url('assets/video/gallery/unit3-backup.jpg')"></span>
+        <span class="gallery-frame__img" data-unit="4" style="background-image:url('assets/video/gallery/unit4-suporte.jpg')"></span>
+        <span class="gallery-frame__img" data-unit="5" style="background-image:url('assets/video/gallery/unit5-sites.jpg')"></span>
         <span class="gallery-frame__glare" aria-hidden="true"></span>
       </div>
     </div>
