@@ -1,3 +1,10 @@
 # Internal design-capture workspace (design-dna spec files, incl. competitor
 # reference captures) — working material, not part of the published site.
 design-styles/
+
+# Raw phone photos/video (HEIC/MOV) and scratch frame previews — heavy source
+# material already processed into the actual web assets under assets/video/
+# and assets/images/. Kept locally, not published.
+assets/*.HEIC
+assets/*.MOV
+assets/preview/

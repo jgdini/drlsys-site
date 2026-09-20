@@ -1,46 +1,21 @@
 /**
- * DRLSYS — scroll controller
+ * DRLSYS — portfolio site controller
  *
- * Drives the "flying through the server" effect using a stack of real photo
- * layers (#photoStack, .photo-layer) crossfaded by scroll progress, plus a
- * slow Ken-Burns zoom on whichever layer is active. The right-side gallery
- * frame (#photoStack sibling, .gallery-frame__img) follows the same
- * data-unit → activeIdx pattern, so its photo always matches whichever
- * service is on screen instead of rotating independently. When/if a
- * cinematic AI-generated video is ready, this same activeIdx logic can
- * drive a canvas frame-sequence player instead — swap the target, keep
- * the progress math. Everything else (progress calc, panel activation,
- * nav, page rail) stays.
+ * Three small, independent pieces: (1) nav background swap + top progress rail
+ * on scroll, (2) a generic scroll-reveal (IntersectionObserver, fade+rise,
+ * staggered by DOM order) applied to every `.reveal` element, (3) the
+ * Tajima-style numbered portfolio index — click (or hover, on pointer devices)
+ * an item in the left list to swap the active case shown on the right.
  */
 (function () {
   "use strict";
 
   var clamp = function (v, min, max) { return Math.max(min, Math.min(max, v)); };
 
+  /* ---------- nav + progress rail ---------- */
   var nav = document.getElementById("nav");
   var pageProgress = document.getElementById("pageProgress");
-  var scrub = document.getElementById("tour");
-  var layers = Array.prototype.slice.call(document.querySelectorAll(".photo-layer"));
-  var panels = Array.prototype.slice.call(document.querySelectorAll(".panel"));
-  var dots = Array.prototype.slice.call(document.querySelectorAll(".dot"));
-  var scrubCue = document.getElementById("scrubCue");
-  var galleryImgs = Array.prototype.slice.call(document.querySelectorAll(".gallery-frame__img"));
-  var galleryLabel = document.getElementById("galleryLabel");
-
-  var GALLERY_LABELS = ["INFRAESTRUTURA", "REDE", "SEGURANÇA", "CLOUD", "SUPORTE", "DEV"];
-
-  var UNIT_COUNT = layers.length || panels.length || 6;
-
   var ticking = false;
-
-  function scrubProgress() {
-    if (!scrub) return 0;
-    var rect = scrub.getBoundingClientRect();
-    var total = scrub.offsetHeight - window.innerHeight;
-    if (total <= 0) return 0;
-    var scrolled = -rect.top;
-    return clamp(scrolled / total, 0, 1);
-  }
 
   function pageProgressValue() {
     var doc = document.documentElement;
@@ -49,181 +24,290 @@
     return clamp(window.scrollY / total, 0, 1);
   }
 
-  function update() {
+  function onScrollUpdate() {
     ticking = false;
-
-    // top progress rail
     if (pageProgress) pageProgress.style.width = (pageProgressValue() * 100).toFixed(2) + "%";
-
-    // nav background
     if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 40);
-
-    var p = scrubProgress();
-    var activeIdx = Math.round(p * (UNIT_COUNT - 1));
-
-    // photo/video crossfade + Ken Burns zoom on the active layer.
-    // Only the active clip actually plays — the rest stay paused so six looping
-    // videos in the DOM don't all burn CPU/battery at once.
-    layers.forEach(function (layer, i) {
-      var active = i === activeIdx;
-      layer.classList.toggle("is-active", active);
-      if (layer.tagName === "VIDEO") {
-        if (active) {
-          var playPromise = layer.play();
-          if (playPromise && playPromise.catch) playPromise.catch(function () {});
-        } else {
-          layer.pause();
-        }
-      }
-    });
-
-    // panel crossfade (synced to the same index)
-    panels.forEach(function (panel, i) {
-      panel.classList.toggle("is-active", i === activeIdx);
-    });
-
-    // right-side gallery photo — matches the active section, not a random rotation
-    galleryImgs.forEach(function (img, i) {
-      img.classList.toggle("is-active", i === activeIdx);
-    });
-    if (galleryLabel && GALLERY_LABELS[activeIdx]) galleryLabel.textContent = GALLERY_LABELS[activeIdx];
-
-    // progress dots + scroll cue (hidden right at the very start/end of the scrub)
-    dots.forEach(function (dot, i) {
-      dot.classList.toggle("is-active", i === activeIdx);
-    });
-    if (scrubCue) scrubCue.classList.toggle("is-hidden", p < 0.02 || p > 0.97);
   }
 
   function onScroll() {
     if (!ticking) {
-      window.requestAnimationFrame(update);
+      window.requestAnimationFrame(onScrollUpdate);
       ticking = true;
     }
   }
 
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
-  document.addEventListener("DOMContentLoaded", update);
-  update();
+  document.addEventListener("DOMContentLoaded", onScrollUpdate);
+  onScrollUpdate();
 
-  /**
-   * Tech modal — short, original explanations (not copied from any vendor
-   * site) for each badge in the "Tecnologias & Plataformas" strip.
-   */
-  var TECH_INFO = {
-    "windows-server": {
-      title: "Windows Server",
-      desc: "Sistema operacional da Microsoft feito para rodar servidores: gerencia usuários, arquivos, aplicações e a rede de uma empresa. É a base para Active Directory, compartilhamento de arquivos e boa parte dos sistemas corporativos do mercado."
-    },
-    "linux": {
-      title: "Linux",
-      desc: "Sistema operacional de código aberto, leve e muito estável — usado como base da maioria dos servidores do mundo. Tem várias \"distribuições\" (Ubuntu, Debian, CentOS...), cada uma otimizada para um tipo de uso, da hospedagem de sites a bancos de dados."
-    },
-    "vmware": {
-      title: "VMware",
-      desc: "Plataforma de virtualização: permite rodar vários servidores \"virtuais\" dentro de um único servidor físico. Isso otimiza o hardware, facilita backup e recuperação, e reduz custo de infraestrutura."
-    },
-    "proxmox": {
-      title: "Proxmox",
-      desc: "Alternativa de código aberto ao VMware para virtualização de servidores, com gerenciamento direto pelo navegador. Ótimo custo-benefício para empresas pequenas e médias que precisam de virtualização robusta sem licenciamento caro."
-    },
-    "m365": {
-      title: "Microsoft 365",
-      desc: "Pacote de produtividade em nuvem da Microsoft: e-mail corporativo (Outlook/Exchange), Teams, Word, Excel, PowerPoint e OneDrive, tudo integrado e acessível de qualquer lugar."
-    },
-    "aws": {
-      title: "AWS (Amazon Web Services)",
-      desc: "Plataforma de nuvem da Amazon: servidores virtuais, bancos de dados, armazenamento e dezenas de outros serviços sob demanda, pagando só pelo que se usa."
-    },
-    "azure": {
-      title: "Microsoft Azure",
-      desc: "Plataforma de nuvem da Microsoft, equivalente à AWS. Muito usada por empresas que já operam com Windows Server e Microsoft 365, pela integração nativa entre os serviços."
-    },
-    "gcp": {
-      title: "Google Cloud",
-      desc: "Plataforma de nuvem do Google, com forte oferta em armazenamento, análise de dados e machine learning, além da hospedagem tradicional de aplicações e sites."
-    },
-    "veeam": {
-      title: "Veeam Backup",
-      desc: "Software especializado em backup e recuperação de dados de servidores físicos e virtuais. Garante que, se algo der errado, a empresa recupera as informações rapidamente, sem depender de sorte."
-    },
-    "zimbra": {
-      title: "Zimbra",
-      desc: "Plataforma de e-mail corporativo, agenda e colaboração, com opção de hospedagem própria. A DRLSYS opera e protege ambientes Zimbra, incluindo backup e segurança de e-mail dedicados através do nosso serviço Synergy Mail Guardian."
-    },
-    "pfsense": {
-      title: "pfSense",
-      desc: "Sistema de firewall e roteador de código aberto, usado para proteger e controlar o tráfego de rede da empresa — com VPN, filtro de conteúdo e regras de segurança configuráveis."
-    },
-    "ubiquiti": {
-      title: "Ubiquiti",
-      desc: "Marca de equipamentos de rede — roteadores, switches e access points Wi-Fi — conhecida pelo bom custo-benefício e por permitir gerenciamento centralizado de toda a rede por um único painel."
-    },
-    "ad": {
-      title: "Active Directory",
-      desc: "Serviço da Microsoft que centraliza o controle de usuários, senhas e permissões de acesso em toda a rede da empresa: quem pode acessar o quê, de onde, e com qual nível de permissão."
-    }
-  };
+  /* ---------- scroll reveal ---------- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  if (revealEls.length && "IntersectionObserver" in window) {
+    // stagger siblings that reveal together (same parent) by DOM order
+    var staggerCounters = new WeakMap();
+    revealEls.forEach(function (el) {
+      var parent = el.parentElement;
+      var count = staggerCounters.get(parent) || 0;
+      el.style.transitionDelay = Math.min(count * 70, 420) + "ms";
+      staggerCounters.set(parent, count + 1);
+    });
 
-  var techModal = document.getElementById("techModal");
-  var techModalTitle = document.getElementById("techModalTitle");
-  var techModalDesc = document.getElementById("techModalDesc");
-  var techModalClose = document.getElementById("techModalClose");
-  var techModalBackdrop = document.getElementById("techModalBackdrop");
-  var techButtons = Array.prototype.slice.call(document.querySelectorAll("[data-tech]"));
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
 
-  function openTechModal(key) {
-    var info = TECH_INFO[key];
-    if (!info || !techModal) return;
-    techModalTitle.textContent = info.title;
-    techModalDesc.textContent = info.desc;
-    techModal.classList.add("is-open");
-    techModal.setAttribute("aria-hidden", "false");
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  function closeTechModal() {
-    if (!techModal) return;
-    techModal.classList.remove("is-open");
-    techModal.setAttribute("aria-hidden", "true");
+  /* ---------- showcase: site viewer dropdown ---------- */
+  var scSelect = document.getElementById("showcaseSelect");
+  var scFrame = document.getElementById("showcaseFrame");
+  if (scSelect && scFrame) {
+    var scUrl = document.getElementById("showcaseUrl");
+    var scOpen = document.getElementById("showcaseOpen");
+    var scMobileOpen = document.getElementById("showcaseMobileOpen");
+    var scViewer = document.getElementById("showcaseViewer");
+    var scSync = function () {
+      var url = scSelect.value;
+      if (!url) { scViewer.hidden = true; scFrame.removeAttribute("src"); return; }
+      scViewer.hidden = false;
+      scUrl.textContent = url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+      scOpen.href = url;
+      scMobileOpen.href = url;
+      scFrame.src = url;
+    };
+    scSelect.addEventListener("change", scSync);
   }
 
-  techButtons.forEach(function (btn) {
-    btn.addEventListener("click", function () { openTechModal(btn.getAttribute("data-tech")); });
-  });
-  if (techModalClose) techModalClose.addEventListener("click", closeTechModal);
-  if (techModalBackdrop) techModalBackdrop.addEventListener("click", closeTechModal);
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeTechModal();
-  });
-
-  /**
-   * Counting-up stat animation — plays once when a [data-count-to] element
-   * scrolls into view, easing from 0 to its target number. Suffix (e.g. " min",
-   * "%") is preserved via data-count-suffix so the element still reads correctly
-   * before JS runs / with JS disabled.
-   */
+  /* ---------- stats count-up (0 → target, once, when scrolled into view) ---------- */
   var countEls = Array.prototype.slice.call(document.querySelectorAll("[data-count-to]"));
+  function runCountUp(el) {
+    var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
+    var duration = 1200;
+    var start = null;
+    function step(timestamp) {
+      if (start === null) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+  }
   if (countEls.length && "IntersectionObserver" in window) {
     var countObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        var el = entry.target;
-        countObserver.unobserve(el);
-        var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
-        var suffix = el.getAttribute("data-count-suffix") || "";
-        var duration = 1200;
-        var start = null;
-        function step(ts) {
-          if (start === null) start = ts;
-          var t = clamp((ts - start) / duration, 0, 1);
-          var eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
-          el.textContent = Math.round(target * eased) + suffix;
-          if (t < 1) window.requestAnimationFrame(step);
-        }
-        window.requestAnimationFrame(step);
+        runCountUp(entry.target);
+        countObserver.unobserve(entry.target);
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.4 });
     countEls.forEach(function (el) { countObserver.observe(el); });
+  } else {
+    countEls.forEach(function (el) { el.textContent = el.getAttribute("data-count-to"); });
+  }
+
+  /* ---------- portfolio: mosaic grid + lightbox with prev/next slider ----------
+   * Mirrors taotajima.jp's per-project page: big title, media, and a bottom
+   * "← #prev / #next →" bar to flip straight to the neighboring case without
+   * closing. Case content lives here (not duplicated in the HTML) since the
+   * lightbox is a single reused panel populated on open. */
+  var CASES = [
+    {
+      num: "#001", name: "Metalloys · Schem · Nicomo", kind: "client work",
+      desc: "Grupo com infraestrutura complexa unificada entre as três empresas: rede UniFi, virtualização Proxmox, backup Veeam e em nuvem, e-mail corporativo Zimbra, 3 Active Directories, firewall dedicado, VPN site-to-site IPSec entre todas as unidades, links de internet redundantes e OpenVPN para acesso remoto.",
+      media: "video", src: "assets/video/unit0-servidores.mp4", poster: "assets/video/posters/unit0-servidores.jpg",
+      logos: [
+        { src: "assets/images/logos/metalloys.jpg", name: "Metalloys" },
+        { src: "assets/images/logos/schemgroup.png", name: "Schem Group" }
+      ]
+    },
+    {
+      num: "#002", name: "Sulmedic", kind: "client work",
+      desc: "Infraestrutura de rede Wi-Fi Ubiquiti de alta densidade em galpão industrial.",
+      media: "image", src: "assets/images/sulmedic-ubiquiti.jpg",
+      logos: [{ src: "assets/images/logos/sulmedic.svg", name: "Sulmedic" }]
+    },
+    {
+      num: "#003", name: "Studio Vero", kind: "client work",
+      desc: "Storage de backup corporativo, redundante e monitorado.",
+      media: "video", src: "assets/video/unit3-backup.mp4", poster: "assets/video/posters/unit3-backup.jpg",
+      logos: [{ src: "assets/images/logos/studiovero.jpg", name: "Studio Vero" }]
+    },
+    {
+      num: "#004", name: "OnStage Academy", kind: "client work",
+      desc: "Cliente internacional — implantação de Office 365 e OneDrive para todo o grupo.",
+      media: "video", src: "assets/video/unit2-seguranca.mp4", poster: "assets/video/posters/unit2-seguranca.jpg",
+      logos: [
+        { src: "assets/images/logos/microsoft.svg", name: "Microsoft" },
+        { src: "assets/images/logos/office365.svg", name: "Office 365" }
+      ]
+    },
+    {
+      num: "#005", name: "Sites", kind: "desenvolvimento web",
+      desc: 'Sites e landing pages sob medida, pensados para Google e para IAs. <a href="#sites">Veja os modelos e navegue neles</a>.',
+      media: "link", href: "#sites", thumb: "assets/images/hanaoka.jpg"
+    }
+  ];
+
+  var PLAY_ICON = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg>';
+  var LINK_ICON = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  var lightbox = document.getElementById("portfolioLightbox");
+  if (lightbox && CASES.length) {
+    var lbNum = document.getElementById("lightboxNum");
+    var lbTitle = document.getElementById("lightboxTitle");
+    var lbMedia = document.getElementById("lightboxMedia");
+    var lbDesc = document.getElementById("lightboxDesc");
+    var lbLogos = document.getElementById("lightboxLogos");
+    var lbPrev = document.getElementById("lightboxPrev");
+    var lbNext = document.getElementById("lightboxNext");
+    var lbPrevNum = document.getElementById("lightboxPrevNum");
+    var lbPrevName = document.getElementById("lightboxPrevName");
+    var lbNextNum = document.getElementById("lightboxNextNum");
+    var lbNextName = document.getElementById("lightboxNextName");
+    var currentIndex = 0;
+    var lastFocused = null;
+
+    function mediaHtml(item) {
+      if (item.media === "self") {
+        return '<span class="portfolio-lightbox__media-placeholder">' + PLAY_ICON + "<em>Você está nele agora ↑</em></span>";
+      }
+      if (item.media === "link") {
+        var bg = item.thumb ? '<img class="portfolio-lightbox__photo" src="' + item.thumb + '" alt="' + item.name + '">' : "";
+        var external = item.href.charAt(0) !== "#";
+        return '<a href="' + item.href + '"' + (external ? ' target="_blank" rel="noopener"' : "") + ">" + bg + '<span class="portfolio-lightbox__media-placeholder portfolio-lightbox__media-placeholder--tag">' + LINK_ICON + "<em>" + item.href.replace(/^https?:\/\//, "") + " ↗</em></span></a>";
+      }
+      if (item.media === "video") {
+        return '<video class="portfolio-lightbox__video" src="' + item.src + '" poster="' + item.poster + '" autoplay muted loop playsinline preload="auto"></video>';
+      }
+      if (item.media === "image") {
+        return '<img class="portfolio-lightbox__photo" src="' + item.src + '" alt="' + item.name + '">';
+      }
+      return '<span class="portfolio-lightbox__media-placeholder">' + PLAY_ICON + "<em>Vídeo em breve</em></span>";
+    }
+
+    // Small logo chips — the real client/partner brand(s) behind a case. On a
+    // light chip so it reads regardless of whether the source logo file is
+    // designed for light or dark backgrounds.
+    function logosHtml(item) {
+      if (!item.logos || !item.logos.length) return "";
+      return item.logos.map(function (logo) {
+        return '<span class="portfolio-logo-chip"><img src="' + logo.src + '" alt="' + logo.name + '"></span>';
+      }).join("");
+    }
+
+    function render(index) {
+      currentIndex = (index + CASES.length) % CASES.length;
+      var item = CASES[currentIndex];
+      var prevItem = CASES[(currentIndex - 1 + CASES.length) % CASES.length];
+      var nextItem = CASES[(currentIndex + 1) % CASES.length];
+
+      lbNum.textContent = item.num;
+      lbTitle.textContent = item.name;
+      lbDesc.innerHTML = item.desc;
+      lbMedia.innerHTML = mediaHtml(item);
+      lbMedia.classList.toggle("is-self", item.media === "self");
+      lbLogos.innerHTML = logosHtml(item);
+
+      lbPrevNum.textContent = prevItem.num;
+      lbPrevName.textContent = prevItem.name;
+      lbNextNum.textContent = nextItem.num;
+      lbNextName.textContent = nextItem.name;
+    }
+
+    function openLightbox(index) {
+      lastFocused = document.activeElement;
+      render(index);
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }
+
+    // Grid thumbnails preview the same real media the lightbox uses (playing
+    // video / an actual photo) instead of a static icon-on-gradient card —
+    // only the "self" case (no real footage to show) keeps the plain gradient.
+    function thumbMediaHtml(item) {
+      if (item.media === "video") {
+        return '<video class="portfolio-card__media" src="' + item.src + '" poster="' + item.poster + '" autoplay muted loop playsinline preload="metadata"></video>';
+      }
+      if (item.media === "image") {
+        return '<img class="portfolio-card__media" src="' + item.src + '" alt="' + item.name + '">';
+      }
+      if (item.media === "link" && item.thumb) {
+        return '<img class="portfolio-card__media" src="' + item.thumb + '" alt="' + item.name + '">';
+      }
+      return "";
+    }
+
+    Array.prototype.slice.call(document.querySelectorAll(".portfolio-card")).forEach(function (card) {
+      var btn = card.querySelector(".portfolio-card__open");
+      var index = parseInt(card.getAttribute("data-case"), 10) || 0;
+      if (btn) btn.addEventListener("click", function () { openLightbox(index); });
+
+      var item = CASES[index];
+      var thumb = card.querySelector(".portfolio-card__thumb");
+      if (item && thumb) {
+        var media = thumbMediaHtml(item);
+        if (media) {
+          thumb.insertAdjacentHTML("afterbegin", media);
+          thumb.classList.add("has-media");
+          // A still photo isn't playable — the play-triangle icon only belongs
+          // on real video thumbnails, so drop it for static images.
+          if (item.media === "image") {
+            var icon = thumb.querySelector("svg");
+            if (icon) icon.remove();
+          }
+        }
+      }
+
+      // Description shows right on the grid card now — no click needed to
+      // read what each case is about, the lightbox is just for the bigger view.
+      var meta = card.querySelector(".portfolio-card__meta");
+      if (item && meta) {
+        var descEl = card.querySelector(".portfolio-card__desc");
+        if (!descEl) {
+          descEl = document.createElement("p");
+          descEl.className = "portfolio-card__desc";
+          descEl.innerHTML = item.desc;
+          meta.insertAdjacentElement("afterend", descEl);
+        }
+
+        var logos = logosHtml(item);
+        if (logos) descEl.insertAdjacentHTML("afterend", '<div class="portfolio-card__logos">' + logos + "</div>");
+      }
+    });
+
+    Array.prototype.slice.call(lightbox.querySelectorAll("[data-close]")).forEach(function (el) {
+      el.addEventListener("click", closeLightbox);
+    });
+    lightbox.addEventListener("click", function (e) {
+      var link = e.target.closest ? e.target.closest("a") : null;
+      if (link && (link.getAttribute("href") || "").charAt(0) === "#") closeLightbox();
+    });
+    lbPrev.addEventListener("click", function () { render(currentIndex - 1); });
+    lbNext.addEventListener("click", function () { render(currentIndex + 1); });
+
+    document.addEventListener("keydown", function (e) {
+      if (!lightbox.classList.contains("is-open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") render(currentIndex - 1);
+      if (e.key === "ArrowRight") render(currentIndex + 1);
+    });
   }
 })();

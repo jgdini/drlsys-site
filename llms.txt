@@ -1,0 +1,30 @@
+# DRLSYS
+
+> DRLSYS é uma empresa de infraestrutura de TI de João Dini, com mais de 18 anos de experiência. Atende empresas em São Paulo (base em Cotia/SP) e clientes internacionais, com servidores, redes, segurança, backup, e-mail corporativo e desenvolvimento de sites.
+
+## Contato
+- E-mail: joao@drlsys.com
+- WhatsApp / telefone: +55 11 98953-1711
+- Site: https://drlsys.com/
+
+## Serviços
+- Desenvolvimento de Sites: sites institucionais, landing pages e sistemas sob medida, pensados para SEO (Google) e para LLMs. Primeiro criamos um site-modelo; se o cliente gostar da ideia, enviamos o orçamento.
+- Suporte Completo de Infraestrutura: suporte remoto e em campo, com SLA de 30 minutos após o chamado aberto para o primeiro contato e atendimento imediato em casos urgentes.
+- E-mail Zimbra Enterprise: migração, antispam e múltiplos domínios.
+- Backup Veeam: backup local e em nuvem, rotina automatizada e retenção em múltiplas camadas.
+- Firewall pfSense e FortiGate: hardening, VPN site-to-site e IPSec, filtragem de conteúdo.
+- Virtualização Microsoft Hyper-V e Proxmox: virtualização, migração física/virtual e alta disponibilidade.
+- Redes e Wi-Fi Ubiquiti: cabeamento estruturado, Wi-Fi de alta densidade e VLANs.
+
+## Como trabalhamos
+1. Diagnóstico do ambiente atual
+2. Plano de arquitetura e prioridades
+3. Implementação sem interromper a operação
+4. Suporte contínuo
+
+## Projetos
+- Grupo Metalloys, Schem e Nicomo: rede UniFi, Proxmox, Veeam, Zimbra, 3 Active Directories, firewall dedicado, VPN site-to-site IPSec, links redundantes e OpenVPN.
+- Sulmedic: Wi-Fi Ubiquiti de alta densidade em galpão industrial.
+- Studio Vero: storage de backup corporativo redundante e monitorado.
+- OnStage Academy: Office 365 e OneDrive para todo o grupo, cliente internacional.
+- Sites: modelos navegáveis em https://drlsys.com/#sites

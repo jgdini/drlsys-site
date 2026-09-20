@@ -3,389 +3,543 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DRLSYS — Infraestrutura de TI</title>
-<meta name="description" content="DRLSYS — servidores Windows, redes, segurança e antivírus, backup e e-mail corporativo, suporte Windows e Mac, sites e sistemas. Solução 360 em TI.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%230a0f14%22/><text x=%2250%22 y=%2266%22 font-size=%2252%22 text-anchor=%22middle%22 font-family=%22monospace%22 fill=%22%2300ffa3%22>D</text></svg>">
-<link rel="stylesheet" href="assets/css/style.css">
+<title>DRLSYS — Infraestrutura de TI, Redes, Segurança e Sites | Cotia/SP</title>
+<meta name="description" content="DRLSYS: infraestrutura de TI, servidores, redes, segurança, backup, e-mail corporativo e sites para empresas que não podem parar. Suporte remoto com primeiro contato em até 30 minutos. Cotia/SP.">
+<link rel="canonical" href="https://drlsys.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#1A3A5C">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DRLSYS">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="DRLSYS — Infraestrutura de TI que funciona">
+<meta property="og:description" content="Servidores, redes, segurança, backup, e-mail corporativo e sites para empresas que não podem parar. Suporte remoto com primeiro contato em até 30 minutos.">
+<meta property="og:url" content="https://drlsys.com/">
+<meta property="og:image" content="https://drlsys.com/assets/images/brand/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://drlsys.com/#org",
+      "name": "DRLSYS",
+      "url": "https://drlsys.com/",
+      "logo": "https://drlsys.com/assets/images/brand/drlsys-wordmark.png",
+      "image": "https://drlsys.com/assets/images/brand/og-image.png",
+      "description": "Infraestrutura de TI, servidores, redes, segurança, backup, e-mail corporativo e desenvolvimento de sites para empresas que não podem parar.",
+      "email": "joao@drlsys.com",
+      "telephone": "+55 11 98953-1711",
+      "founder": {
+        "@type": "Person",
+        "name": "João Dini"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cotia",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "São Paulo"
+        },
+        {
+          "@type": "Country",
+          "name": "Brasil"
+        }
+      ],
+      "knowsAbout": [
+        "Infraestrutura de TI",
+        "Redes Ubiquiti",
+        "Firewall pfSense",
+        "FortiGate",
+        "Virtualização Proxmox e Hyper-V",
+        "Backup Veeam",
+        "E-mail Zimbra",
+        "Desenvolvimento de sites",
+        "SEO"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desenvolvimento de Sites"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Suporte Completo de Infraestrutura"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "E-mail Zimbra Enterprise"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Backup Veeam"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Firewall pfSense"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Virtualização Microsoft Hyper-V e Proxmox"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Redes e Wi-Fi Ubiquiti"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "FortiGate — Segurança de Perímetro"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://drlsys.com/#site",
+      "url": "https://drlsys.com/",
+      "name": "DRLSYS",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://drlsys.com/#org"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Vocês atendem empresas fora de São Paulo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Atendemos clientes em São Paulo com suporte remoto e em campo, e clientes internacionais de forma 100% remota."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Já tenho uma infraestrutura montada — vocês assumem o suporte?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Fazemos o diagnóstico do ambiente existente e assumimos a partir dali, sem precisar recomeçar do zero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva um projeto de infraestrutura?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende do escopo — pequenos ajustes levam alguns dias, projetos completos podem levar algumas semanas. Sempre planejados para não impactar sua operação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o suporte depois da entrega?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Suporte contínuo, com atendimento remoto e em campo, SLA de 30 minutos após o chamado aberto para o primeiro contato e atendimento imediato em casos urgentes."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%231A3A5C%22/><text x=%2250%22 y=%2266%22 font-size=%2252%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 fill=%22%23ffffff%22>D</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=20260920e">
 </head>
 <body>
 
 <div class="progress-rail"><div class="progress-rail__fill" id="pageProgress"></div></div>
 
 <nav class="nav" id="nav">
-  <a href="#top" class="nav__logo">DRL<span>SYS</span></a>
+  <a href="#top" class="nav__logo" aria-label="DRLSYS">
+    <img class="nav__logo-img" src="assets/images/brand/drlsys-wordmark.png" alt="DRLSYS">
+  </a>
   <div class="nav__links">
     <a href="#servicos">Serviços</a>
-    <a href="#como-funciona">Como funciona</a>
-    <a href="#depoimentos">Depoimentos</a>
+    <a href="#portfolio">Portfólio</a>
     <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </div>
-  <a href="#contato" class="nav__cta">Falar com a DRLSYS</a>
+  <a href="#contato" class="nav__cta">Fale conosco</a>
 </nav>
 
 <header class="hero" id="top">
   <video class="hero__video" poster="assets/video/posters/hero.jpg" src="assets/video/hero.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
   <div class="hero__video-overlay" aria-hidden="true"></div>
-  <div class="hero__beam" aria-hidden="true"></div>
-  <div class="hero__grid" aria-hidden="true"></div>
-  <div class="glass-field" aria-hidden="true">
-    <div class="glass-shape glass-shape--a stat-chip">
-      <span class="stat-chip__num">24/7</span>
-      <span class="stat-chip__label">Monitoramento contínuo</span>
-    </div>
-    <span class="glass-shape glass-shape--b"></span>
-    <div class="glass-shape glass-shape--c stat-chip">
-      <span class="stat-chip__num">20 min</span>
-      <span class="stat-chip__label">Tempo médio de resposta</span>
-    </div>
-    <div class="glass-shape glass-shape--d stat-chip stat-chip--pill">
-      <span class="stat-chip__dot"></span>
-      <span class="stat-chip__label">Todos os sistemas operando</span>
-    </div>
-    <svg class="glass-ring" viewBox="0 0 200 200" width="220" height="220"><circle cx="100" cy="100" r="92" fill="none" stroke="url(#ringGrad)" stroke-width="1.2"/><defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#539ae3" stop-opacity="0.9"/><stop offset="1" stop-color="#539ae3" stop-opacity="0"/></linearGradient></defs></svg>
+  <div class="hero__particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
-  <p class="hero__eyebrow">SERVIDORES &middot; REDES &middot; SEGURANÇA &middot; BACKUP</p>
-  <h1 class="hero__title">A <em>espinha dorsal</em> de TI<br>por trás do seu negócio.</h1>
-  <p class="hero__subtitle">Servidores, redes, segurança, backup, e-mail corporativo e suporte Windows e Mac — a DRLSYS é a solução 360 que sustenta sua operação, 24 horas por dia.</p>
-  <a href="#servicos" class="hero__scrollhint">
-    <span>Role para entrar no servidor</span>
+  <div class="hero__inner">
+    <p class="hero__eyebrow reveal">INFRAESTRUTURA · SEGURANÇA · TECNOLOGIA</p>
+    <h1 class="hero__title reveal">Infraestrutura que funciona.<br>Tecnologia que transforma.</h1>
+    <p class="hero__subtitle reveal">Especialistas em servidores, redes, segurança e sites para empresas que não podem parar.</p>
+    <a href="#portfolio" class="hero__cta reveal">
+      <span>Conheça nosso trabalho</span>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <a href="#servicos" class="hero__scrollhint" aria-label="Rolar para baixo">
     <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 1v20M8 21l6-6M8 21l-6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </header>
 
-<section class="stack-strip">
-  <p class="stack-strip__label">TECNOLOGIAS &amp; PLATAFORMAS QUE OPERAMOS <em>(clique pra saber mais)</em></p>
-  <div class="stack-strip__row">
-    <button type="button" data-tech="windows-server">Windows Server</button>
-    <button type="button" data-tech="linux">Linux</button>
-    <button type="button" data-tech="vmware">VMware</button>
-    <button type="button" data-tech="proxmox">Proxmox</button>
-    <button type="button" data-tech="m365">Microsoft 365</button>
-    <button type="button" data-tech="aws">AWS</button>
-    <button type="button" data-tech="azure">Azure</button>
-    <button type="button" data-tech="gcp">Google Cloud</button>
-    <button type="button" data-tech="veeam">Veeam Backup</button>
-    <button type="button" data-tech="zimbra">Zimbra</button>
-    <button type="button" data-tech="pfsense">pfSense</button>
-    <button type="button" data-tech="ubiquiti">Ubiquiti</button>
-    <button type="button" data-tech="ad">Active Directory</button>
+<section class="stats">
+  <div class="stats__grid">
+    <div class="stats__item reveal">
+      <span class="stats__num"><span class="stats__num-value" data-count-to="18">0</span>+</span>
+      <span class="stats__label">anos de experiência em TI</span>
+    </div>
+    <div class="stats__item reveal">
+      <span class="stats__num"><span class="stats__num-value" data-count-to="10">0</span>+</span>
+      <span class="stats__label">anos de parceria com os maiores clientes</span>
+    </div>
+    <div class="stats__item reveal">
+      <span class="stats__num"><span class="stats__num-value" data-count-to="30">0</span> min</span>
+      <span class="stats__label">para o primeiro contato após o chamado aberto, e imediato em casos urgentes</span>
+    </div>
   </div>
 </section>
 
-<div class="tech-modal" id="techModal" aria-hidden="true">
-  <div class="tech-modal__backdrop" id="techModalBackdrop"></div>
-  <div class="tech-modal__panel" role="dialog" aria-modal="true" aria-labelledby="techModalTitle">
-    <button type="button" class="tech-modal__close" id="techModalClose" aria-label="Fechar">&times;</button>
-    <span class="tech-modal__eyebrow" id="techModalEyebrow">TECNOLOGIA</span>
-    <h3 id="techModalTitle"></h3>
-    <p id="techModalDesc"></p>
+<section class="services" id="servicos">
+  <div class="services__inner">
+    <p class="section-eyebrow reveal">O QUE FAZEMOS</p>
+    <h2 class="reveal">Serviços</h2>
+    <div class="services__grid">
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg></span>
+        <h3>Desenvolvimento de Sites</h3>
+        <p>Sites institucionais, landing pages e sistemas sob medida para o seu negócio.</p>
+        <ul class="service-card__list">
+          <li>Sites institucionais</li>
+          <li>Landing pages</li>
+          <li>Sistemas sob medida</li>
+        </ul>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M15 15l3.35 3.35" /><path d="M9 15l-3.35 3.35" /><path d="M5.65 5.65l3.35 3.35" /><path d="M18.35 5.65l-3.35 3.35" /></svg></span>
+        <h3>Suporte Completo de Infraestrutura</h3>
+        <p>Suporte remoto com SLA de 30 minutos após o chamado aberto para o primeiro contato, e atendimento imediato em casos urgentes. Entendemos que o seu negócio depende de uma infraestrutura funcional e de um suporte rápido.</p>
+        <ul class="service-card__list">
+          <li>1º contato em até 30 min após o chamado</li>
+          <li>Imediato em casos urgentes</li>
+          <li>Atendimento remoto e em campo</li>
+          <li>Monitoramento contínuo</li>
+        </ul>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg></span>
+        <h3>E-mail Zimbra Enterprise</h3>
+        <p>Mais barato que Office 365 e Google, e muito melhor que Locaweb.</p>
+        <ul class="service-card__list">
+          <li>Migração e configuração</li>
+          <li>Antispam e segurança</li>
+          <li>Múltiplos domínios</li>
+        </ul>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6c0 1.657 3.582 3 8 3s8 -1.343 8 -3s-3.582 -3 -8 -3s-8 1.343 -8 3" /><path d="M4 6v6c0 1.657 3.582 3 8 3c1.118 0 2.183 -.086 3.15 -.241" /><path d="M20 12v-6" /><path d="M4 12v6c0 1.657 3.582 3 8 3c.157 0 .312 -.002 .466 -.005" /><path d="M16 19h6" /><path d="M19 16l3 3l-3 3" /></svg></span>
+        <h3>Backup Veeam</h3>
+        <p>Backup automatizado em múltiplas camadas, pra nunca perder um dado importante.</p>
+        <ul class="service-card__list">
+          <li>Backup local e em nuvem</li>
+          <li>Rotina automatizada</li>
+          <li>Retenção em múltiplas camadas</li>
+        </ul>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -4" /><path d="M17 17l0 .01" /><path d="M13 17l0 .01" /><path d="M15 13l0 -2" /><path d="M11.75 8.75a4 4 0 0 1 6.5 0" /><path d="M8.5 6.5a8 8 0 0 1 13 0" /></svg></span>
+        <h3>Firewall pfSense</h3>
+        <p>Proteção de rede open-source configurada e gerenciada pela DRLSYS.</p>
+        <ul class="service-card__list">
+          <li>Configuração e hardening</li>
+          <li>VPN site-to-site</li>
+          <li>Monitoramento de tráfego</li>
+        </ul>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-2" /><path d="M3 15a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -2" /><path d="M7 8l0 .01" /><path d="M7 16l0 .01" /><path d="M11 8h6" /><path d="M11 16h6" /></svg></span>
+        <h3>Especialista Microsoft Hyper-V e Proxmox</h3>
+        <p>Virtualização de servidores física e virtual dimensionada pro seu negócio.</p>
+        <ul class="service-card__list">
+          <li>Virtualização de servidores</li>
+          <li>Migração física/virtual</li>
+          <li>Alta disponibilidade</li>
+        </ul>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12l0 .01" /><path d="M14.828 9.172a4 4 0 0 1 0 5.656" /><path d="M17.657 6.343a8 8 0 0 1 0 11.314" /><path d="M9.168 14.828a4 4 0 0 1 0 -5.656" /><path d="M6.337 17.657a8 8 0 0 1 0 -11.314" /></svg></span>
+        <h3>Redes e Wi-Fi Ubiquiti</h3>
+        <p>Cabeamento estruturado e Wi-Fi corporativo de alta densidade.</p>
+        <ul class="service-card__list">
+          <li>Cabeamento estruturado</li>
+          <li>Wi-Fi de alta densidade</li>
+          <li>Segmentação por VLANs</li>
+        </ul>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" /><path d="M15 19l2 2l4 -4" /></svg></span>
+        <h3>FortiGate — Segurança de Perímetro</h3>
+        <p>Firewall de perímetro enterprise pra proteger toda a borda da sua rede.</p>
+        <ul class="service-card__list">
+          <li>Firewall de próxima geração</li>
+          <li>VPN IPSec</li>
+          <li>Filtragem de conteúdo</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="stack" id="tecnologias">
+  <p class="section-eyebrow reveal">TECNOLOGIAS</p>
+  <h2 class="reveal">Plataformas que dominamos.</h2>
+  <div class="stack__row reveal">
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/microsoft.svg" alt="Microsoft"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/office365.svg" alt="Office 365"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/ubiquiti.svg" alt="Ubiquiti"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/veeam.png" alt="Veeam"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/zimbra.png" alt="Zimbra"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/proxmox.svg" alt="Proxmox"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/pfsense.svg" alt="pfSense"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/fortinet.svg" alt="Fortinet"></span>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="portfolio__head">
+    <p class="section-eyebrow reveal">PORTFÓLIO</p>
+    <h2 class="reveal">Projetos que sustentam<br>operações reais.</h2>
+  </div>
+
+  <div class="portfolio__grid">
+    <article class="portfolio-card reveal" data-case="0">
+      <button type="button" class="portfolio-card__open" aria-haspopup="dialog">
+        <span class="portfolio-card__thumb is-tall" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg></span>
+        <span class="portfolio-card__meta"><span class="portfolio-card__num">#001</span><span class="portfolio-card__name">Metalloys · Schem · Nicomo</span></span>
+      </button>
+      <p class="portfolio-card__desc">Grupo com infraestrutura complexa unificada entre as três empresas: rede UniFi, virtualização Proxmox, backup Veeam e em nuvem, e-mail corporativo Zimbra, 3 Active Directories, firewall dedicado, VPN site-to-site IPSec entre todas as unidades, links de internet redundantes e OpenVPN para acesso remoto.</p>
+    </article>
+    <article class="portfolio-card reveal" data-case="1">
+      <button type="button" class="portfolio-card__open" aria-haspopup="dialog">
+        <span class="portfolio-card__thumb is-short" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg></span>
+        <span class="portfolio-card__meta"><span class="portfolio-card__num">#002</span><span class="portfolio-card__name">Sulmedic</span></span>
+      </button>
+      <p class="portfolio-card__desc">Infraestrutura de rede Wi-Fi Ubiquiti de alta densidade em galpão industrial.</p>
+    </article>
+    <article class="portfolio-card reveal" data-case="2">
+      <button type="button" class="portfolio-card__open" aria-haspopup="dialog">
+        <span class="portfolio-card__thumb is-tall" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg></span>
+        <span class="portfolio-card__meta"><span class="portfolio-card__num">#003</span><span class="portfolio-card__name">Studio Vero</span></span>
+      </button>
+      <p class="portfolio-card__desc">Storage de backup corporativo, redundante e monitorado.</p>
+    </article>
+    <article class="portfolio-card reveal" data-case="3">
+      <button type="button" class="portfolio-card__open" aria-haspopup="dialog">
+        <span class="portfolio-card__thumb" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7L8 5z" fill="currentColor"/></svg></span>
+        <span class="portfolio-card__meta"><span class="portfolio-card__num">#004</span><span class="portfolio-card__name">OnStage Academy</span></span>
+      </button>
+      <p class="portfolio-card__desc">Cliente internacional — implantação de Office 365 e OneDrive para todo o grupo.</p>
+    </article>
+    <article class="portfolio-card reveal" data-case="4">
+      <button type="button" class="portfolio-card__open" aria-haspopup="dialog">
+        <span class="portfolio-card__thumb" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="portfolio-card__meta"><span class="portfolio-card__num">#005</span><span class="portfolio-card__name">Sites</span></span>
+      </button>
+      <p class="portfolio-card__desc">Sites e landing pages sob medida, pensados para Google e para IAs. <a href="#sites">Veja os modelos e navegue neles</a>.</p>
+    </article>
+  </div>
+</section>
+
+<div class="portfolio-lightbox" id="portfolioLightbox" aria-hidden="true">
+  <div class="portfolio-lightbox__backdrop" data-close></div>
+  <div class="portfolio-lightbox__panel" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+    <button type="button" class="portfolio-lightbox__close" data-close aria-label="Fechar">&times;</button>
+    <div class="portfolio-lightbox__body">
+      <p class="portfolio-lightbox__tag"><span id="lightboxNum">#001</span> <em>/ client work</em></p>
+      <h3 id="lightboxTitle">Metalloys</h3>
+      <div class="portfolio-lightbox__media" id="lightboxMedia"></div>
+      <p class="portfolio-lightbox__desc" id="lightboxDesc"></p>
+      <div class="portfolio-lightbox__logos" id="lightboxLogos"></div>
+    </div>
+    <div class="portfolio-lightbox__nav">
+      <button type="button" class="portfolio-lightbox__prev" id="lightboxPrev">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L4 8l6 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span><em id="lightboxPrevNum">#008</em><b id="lightboxPrevName">Hanaoka</b></span>
+      </button>
+      <button type="button" class="portfolio-lightbox__next" id="lightboxNext">
+        <span><em id="lightboxNextNum">#002</em><b id="lightboxNextName">Schem Group</b></span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l6 5-6 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
   </div>
 </div>
 
-<section class="services-overview section-light" id="servicos">
-  <div class="services-overview__inner">
-    <p class="section-eyebrow">O QUE FAZEMOS</p>
-    <h2>Tudo que a sua operação de TI precisa, num lugar só.</h2>
-    <div class="services-overview__grid">
-      <article class="service-card">
-        <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="15" width="18" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="6" r="1" fill="currentColor"/><circle cx="7" cy="18" r="1" fill="currentColor"/></svg></span>
-        <h3>Servidores Windows &amp; Infraestrutura</h3>
-        <p>Projeto, instalação e manutenção de servidores físicos e virtuais dimensionados pro seu negócio.</p>
-      </article>
-      <article class="service-card">
-        <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="5" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="18" r="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M7 7.5L11 16M17 7.5L13 16M7.2 6H16.8" stroke="currentColor" stroke-width="1.6"/></svg></span>
-        <h3>Redes Wi-Fi &amp; Cabeada</h3>
-        <p>Cabeamento estruturado, switches e Wi-Fi corporativo com performance estável.</p>
-      </article>
-      <article class="service-card">
-        <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>Segurança &amp; Antivírus</h3>
-        <p>Antivírus corporativo gerenciado, firewall e monitoramento contínuo.</p>
-      </article>
-      <article class="service-card">
-        <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17a4 4 0 01-.5-7.97A5 5 0 0116.9 8 4.5 4.5 0 0117 17H7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12v6m0-6l-2 2m2-2l2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>Backup &amp; E-mail Corporativo</h3>
-        <p>Backup automatizado e e-mail Zimbra protegido pelo nosso Synergy Mail Guardian.</p>
-      </article>
-      <article class="service-card">
-        <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="3" y="13" width="4" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="13" width="4" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M19 19v1a2 2 0 01-2 2h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <h3>Suporte Técnico Windows &amp; Mac</h3>
-        <p>Atendimento remoto e em campo, com SLA definido. Chamado aberto, problema resolvido.</p>
-      </article>
-      <article class="service-card">
-        <span class="service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 8l-5 4 5 4M15 8l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <h3>Sites &amp; Sistemas</h3>
-        <p>Sites, sistemas internos e automações sob medida pro seu software.</p>
-      </article>
-    </div>
-    <a href="#tour" class="services-overview__tour-link">
-      <span>Ver o tour completo pelo servidor</span>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</section>
-
-<section class="scrub" id="tour">
-  <div class="scrub__stage">
-
-    <div class="scrub__viewfinder" aria-hidden="true">
-      <span class="vf-corner vf-corner--tl"></span>
-      <span class="vf-corner vf-corner--tr"></span>
-      <span class="vf-corner vf-corner--bl"></span>
-      <span class="vf-corner vf-corner--br"></span>
-    </div>
-
-    <div class="hud" aria-hidden="true">
-      <span class="hud__status"><span class="hud__blink"></span>STATUS · ONLINE</span>
-      <span class="hud__metric">UPTIME <strong>99.98%</strong></span>
-      <span class="hud__metric">LATÊNCIA <strong>6ms</strong></span>
-    </div>
-
-    <div class="photo-stack" id="photoStack" aria-hidden="true">
-      <!-- AI-generated cinematic clips (Higgsfield), color-graded to the site's blue palette via CSS.
-           unit index → clip, matched to each service section below. main.js plays/pauses these
-           based on scroll position, same crossfade logic that used to drive the static photos. -->
-      <video class="photo-layer is-active" data-unit="0" poster="assets/video/posters/unit0-servidores.jpg" src="assets/video/unit0-servidores.mp4" autoplay muted loop playsinline preload="auto"></video>
-      <video class="photo-layer" data-unit="1" poster="assets/video/posters/unit1-redes.jpg" src="assets/video/unit1-redes.mp4" muted loop playsinline preload="auto"></video>
-      <video class="photo-layer" data-unit="2" poster="assets/video/posters/unit2-seguranca.jpg" src="assets/video/unit2-seguranca.mp4" muted loop playsinline preload="auto"></video>
-      <video class="photo-layer" data-unit="3" poster="assets/video/posters/unit3-backup.jpg" src="assets/video/unit3-backup.mp4" muted loop playsinline preload="auto"></video>
-      <video class="photo-layer" data-unit="4" poster="assets/video/posters/unit4-suporte.jpg" src="assets/video/unit4-suporte.mp4" muted loop playsinline preload="auto"></video>
-      <video class="photo-layer" data-unit="5" poster="assets/video/posters/unit5-sites.jpg" src="assets/video/unit5-sites.mp4" muted loop playsinline preload="auto"></video>
-      <div class="photo-stack__grade" aria-hidden="true"></div>
-      <div class="photo-stack__vignette" aria-hidden="true"></div>
-    </div>
-
-    <div class="scrub__panels">
-      <article class="panel" data-i="0">
-        <span class="panel__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="3" y="15" width="18" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><circle cx="7" cy="6" r="1" fill="currentColor"/><circle cx="7" cy="18" r="1" fill="currentColor"/></svg></span>
-        <span class="panel__index">01 <em>/ 06</em></span>
-        <h2>Servidores Windows &amp; Infraestrutura</h2>
-        <p>Projeto, instalação e manutenção de servidores Windows físicos e virtuais dimensionados para o seu negócio — sem gargalos, sem surpresas.</p>
-        <ul class="panel__list">
-          <li>Servidores Windows físicos e virtuais</li>
-          <li>Migração e expansão sem downtime</li>
-          <li>Monitoramento de capacidade contínuo</li>
-        </ul>
-      </article>
-      <article class="panel" data-i="1">
-        <span class="panel__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="5" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="19" cy="6" r="2.2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="18" r="2.2" stroke="currentColor" stroke-width="1.6"/><path d="M7 7.5L11 16M17 7.5L13 16M7.2 6H16.8" stroke="currentColor" stroke-width="1.6"/></svg></span>
-        <span class="panel__index">02 <em>/ 06</em></span>
-        <h2>Redes Wi-Fi &amp; Cabeada</h2>
-        <p>Cabeamento estruturado, switches e Wi-Fi corporativo configurados para performance estável em qualquer operação.</p>
-        <ul class="panel__list">
-          <li>Cabeamento estruturado certificado</li>
-          <li>Wi-Fi corporativo de alta densidade</li>
-          <li>Rede cabeada com gestão centralizada</li>
-        </ul>
-      </article>
-      <article class="panel" data-i="2">
-        <span class="panel__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="panel__index">03 <em>/ 06</em></span>
-        <h2>Segurança &amp; Antivírus</h2>
-        <p>Antivírus corporativo gerenciado, firewall e monitoramento contínuo — alertas antes que o problema vire prejuízo.</p>
-        <ul class="panel__list">
-          <li>Antivírus corporativo gerenciado</li>
-          <li>Firewall e regras de acesso</li>
-          <li>Monitoramento contínuo com alertas em tempo real</li>
-        </ul>
-      </article>
-      <article class="panel" data-i="3">
-        <span class="panel__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 17a4 4 0 01-.5-7.97A5 5 0 0116.9 8 4.5 4.5 0 0117 17H7z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12v6m0-6l-2 2m2-2l2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="panel__index">04 <em>/ 06</em></span>
-        <h2>Backup &amp; E-mail Corporativo</h2>
-        <p>Backup automatizado e e-mail corporativo Zimbra protegido pelo nosso Synergy Mail Guardian — seus dados e sua comunicação sempre a salvo.</p>
-        <ul class="panel__list">
-          <li>Backup automatizado em múltiplas camadas</li>
-          <li>E-mail corporativo Zimbra gerenciado</li>
-          <li>Synergy Mail Guardian: segurança e backup de e-mail dedicados</li>
-        </ul>
-      </article>
-      <article class="panel" data-i="4">
-        <span class="panel__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="3" y="13" width="4" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="13" width="4" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M19 19v1a2 2 0 01-2 2h-3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
-        <span class="panel__index">05 <em>/ 06</em></span>
-        <h2>Suporte Técnico Windows &amp; Mac</h2>
-        <p>Atendimento remoto e em campo para Windows e Mac, com SLA definido. Chamado aberto, problema resolvido.</p>
-        <ul class="panel__list">
-          <li>Suporte Windows e Mac</li>
-          <li>Central de chamados com SLA</li>
-          <li>Manutenção preventiva agendada</li>
-        </ul>
-      </article>
-      <article class="panel" data-i="5">
-        <span class="panel__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 8l-5 4 5 4M15 8l5 4-5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <span class="panel__index">06 <em>/ 06</em></span>
-        <h2>Sites &amp; Sistemas</h2>
-        <p>Sites, sistemas internos e automações sob medida — a mesma engenharia que sustenta sua infraestrutura, aplicada ao seu software.</p>
-        <ul class="panel__list">
-          <li>Sites institucionais e landing pages</li>
-          <li>Sistemas internos sob medida</li>
-          <li>Automações e integrações</li>
-        </ul>
-      </article>
-    </div>
-
-    <div class="scrub__gallery" aria-hidden="true">
-      <span class="scrub__gallery-label" id="galleryLabel">EM CAMPO</span>
-      <div class="gallery-frame">
-        <!-- one still per service section (data-unit matches .panel/.photo-layer), pulled from the
-             same AI-generated clips playing in the main frame — so the photo here is always the
-             topically related, on-brand shot, not a random Unsplash rotation. -->
-        <span class="gallery-frame__img is-active" data-unit="0" style="background-image:url('assets/video/gallery/unit0-servidores.jpg')"></span>
-        <span class="gallery-frame__img" data-unit="1" style="background-image:url('assets/video/gallery/unit1-redes.jpg')"></span>
-        <span class="gallery-frame__img" data-unit="2" style="background-image:url('assets/video/gallery/unit2-seguranca.jpg')"></span>
-        <span class="gallery-frame__img" data-unit="3" style="background-image:url('assets/video/gallery/unit3-backup.jpg')"></span>
-        <span class="gallery-frame__img" data-unit="4" style="background-image:url('assets/video/gallery/unit4-suporte.jpg')"></span>
-        <span class="gallery-frame__img" data-unit="5" style="background-image:url('assets/video/gallery/unit5-sites.jpg')"></span>
-        <span class="gallery-frame__glare" aria-hidden="true"></span>
+<section class="showcase" id="sites">
+  <div class="showcase__inner">
+    <p class="section-eyebrow reveal">SITES SOB MEDIDA</p>
+    <h2 class="reveal">Veja o seu site antes de decidir.</h2>
+    <div class="showcase__points">
+      <div class="showcase__point reveal">
+        <h3>Feito pensando em SEO e em IA</h3>
+        <p>Nossos sites são construídos para o Google (SEO) e também para LLMs, as IAs que respondem perguntas: estrutura clara, carregamento rápido e conteúdo que buscadores e assistentes conseguem entender.</p>
+      </div>
+      <div class="showcase__point reveal">
+        <h3>Primeiro o modelo, depois o orçamento</h3>
+        <p>Criamos um site-modelo para o seu negócio. Se você gostar da ideia, aí sim enviamos o orçamento. Escolha um dos modelos abaixo e navegue nele aqui mesmo.</p>
       </div>
     </div>
-
-    <div class="scrub__cue" id="scrubCue" aria-hidden="true">
-      <div class="scrub__dots">
-        <span class="dot" data-dot="0"></span>
-        <span class="dot" data-dot="1"></span>
-        <span class="dot" data-dot="2"></span>
-        <span class="dot" data-dot="3"></span>
-        <span class="dot" data-dot="4"></span>
-        <span class="dot" data-dot="5"></span>
-      </div>
-      <span class="scrub__cue-text">Role para continuar</span>
-      <svg width="14" height="20" viewBox="0 0 16 24" fill="none"><path d="M8 1v20M8 21l6-6M8 21l-6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="showcase__picker reveal">
+      <label for="showcaseSelect" class="showcase__picker-label">Olhe alguns modelos que fizemos <span aria-hidden="true">↓</span></label>
+      <select id="showcaseSelect" class="showcase__select">
+        <option value="" selected>Clique aqui e escolha um modelo…</option>
+        <option value="https://hanaoka.com.br/">Hanaoka (no ar)</option>
+        <option value="https://jgdini.github.io/proposta-anunciantes-premiapao/">Premia Pão: campanha compartilhada</option>
+        <option value="https://jgdini.github.io/proposta-anunciantes-premiapao/exclusivo.html">Premia Pão: campanha exclusiva</option>
+        <option value="https://jgdini.github.io/aclaris/">Aclaris (modelo)</option>
+        <option value="https://jgdini.github.io/stella-resinas/">Stella Resinas (modelo)</option>
+        <option value="https://jgdini.github.io/nosofaraway/">No So Far Away (modelo)</option>
+      </select>
     </div>
-
-  </div>
-</section>
-
-<section class="process section-light" id="como-funciona">
-  <div class="process__inner">
-    <p class="section-eyebrow">COMO FUNCIONA</p>
-    <h2>Do diagnóstico ao suporte contínuo.</h2>
-    <div class="process__steps">
-      <div class="process__step">
-        <span class="process__num">01</span>
-        <h3>Diagnóstico</h3>
-        <p>Mapeamos sua infraestrutura atual e identificamos os pontos de risco antes que virem problema.</p>
+    <div class="showcase__viewer" id="showcaseViewer" hidden>
+      <div class="showcase__bar">
+        <span class="showcase__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="showcase__url" id="showcaseUrl"></span>
+        <a class="showcase__open" id="showcaseOpen" href="#" target="_blank" rel="noopener">Abrir em nova aba ↗</a>
       </div>
-      <div class="process__step">
-        <span class="process__num">02</span>
-        <h3>Plano de ação</h3>
-        <p>Você recebe um plano claro, com prioridades, prazos e orçamento definido — sem letras miúdas.</p>
+      <div class="showcase__stage">
+        <span class="showcase__loading">Carregando…</span>
+        <iframe id="showcaseFrame" class="showcase__frame" title="Pré-visualização do site" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
       </div>
-      <div class="process__step">
-        <span class="process__num">03</span>
-        <h3>Execução &amp; suporte</h3>
-        <p>Implementamos as mudanças e seguimos monitorando — a DRLSYS não some depois da entrega.</p>
-      </div>
+      <a class="showcase__mobile-open" id="showcaseMobileOpen" href="#" target="_blank" rel="noopener">Abrir site em nova aba ↗</a>
     </div>
   </div>
 </section>
 
-<div class="section-chevron" aria-hidden="true"></div>
-
-<section class="stack-strip partners-strip">
-  <p class="stack-strip__label">E MAIS, VIA PARCERIAS <em>— sua operação de TI numa solução só</em></p>
-  <div class="stack-strip__row">
-    <span>Telefonia</span>
-    <span>CRM</span>
-    <span>Sistemas ERP</span>
-    <span>Outsourcing de Impressoras</span>
-    <span>Venda de Equipamentos</span>
+<section class="partners" id="parceiros">
+  <p class="section-eyebrow reveal">PARCERIAS</p>
+  <div class="partners__row reveal">
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/asrconsult-navy.png" alt="ASR Consult"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/synergy.png" alt="Synergy Tecnologia"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/penso.svg" alt="Penso Tecnologia"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/sqi.png" alt="SQI"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/advance.png" alt="Advance"></span>
   </div>
 </section>
 
 <section class="about" id="sobre">
   <div class="about__inner">
-    <p class="section-eyebrow">SOBRE A DRLSYS</p>
-    <h2>TI que roda em segundo plano — e nunca falha em primeiro.</h2>
-    <p class="about__text">
-      A DRLSYS nasceu para resolver um problema simples: infraestrutura de TI não pode ser o motivo de uma empresa parar.
-      Cuidamos de servidores, redes, segurança, backup e suporte Windows e Mac — e ainda conectamos você a parceiros de
-      telefonia, CRM, ERP, outsourcing de impressoras e equipamentos. Uma solução 360 pra sua operação de TI, num lugar só.
-    </p>
-    <div class="about__stats">
-      <div class="stat-card">
-        <span class="stat-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
-        <strong>24/7</strong>
-        <span>Monitoramento</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        <strong data-count-to="20" data-count-suffix=" min">0 min</strong>
-        <span>Tempo médio de resposta*</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 0116 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><rect x="3" y="13" width="4" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/><rect x="17" y="13" width="4" height="6" rx="1.5" stroke="currentColor" stroke-width="1.6"/></svg></span>
-        <strong data-count-to="100" data-count-suffix="%">0%</strong>
-        <span>Foco em disponibilidade</span>
-      </div>
-    </div>
-    <p class="about__note">*Meta de SLA para clientes com contrato ativo.</p>
+    <p class="section-eyebrow reveal">SOBRE</p>
+    <p class="about__quote reveal">"João Dini — 18+ anos de experiência em TI. Especialista em infraestrutura complexa, segurança e transformação digital para empresas de médio e grande porte. Atendo empresas em São Paulo e clientes internacionais."</p>
   </div>
 </section>
 
-<section class="testimonials section-light" id="depoimentos">
-  <div class="testimonials__inner">
-    <p class="section-eyebrow">CLIENTES</p>
-    <h2>Quem já confia na DRLSYS.</h2>
-    <div class="testimonials__grid">
-      <article class="testimonial-card">
-        <span class="testimonial-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M7 8c-2 1-3 3-3 6v3h6v-6H7c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 8c-2 1-3 3-3 6v3h6v-6h-3c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        </span>
-        <p class="testimonial-card__quote">Já são mais de 10 anos com a DRLSYS cuidando da nossa infraestrutura. Nunca precisamos nos preocupar com isso.</p>
-        <p class="testimonial-card__meta"><strong>Cintia Santos</strong> — Metalloys, cliente há +10 anos</p>
-      </article>
-      <article class="testimonial-card">
-        <span class="testimonial-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M7 8c-2 1-3 3-3 6v3h6v-6H7c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 8c-2 1-3 3-3 6v3h6v-6h-3c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        </span>
-        <p class="testimonial-card__quote">Mais de uma década de suporte com a DRLSYS. A gente cresceu, mudou de sistema, e eles sempre acompanharam sem travar a operação.</p>
-        <p class="testimonial-card__meta"><strong>Alisson Marcelino</strong> — GroupChem, cliente há +10 anos</p>
-      </article>
-      <article class="testimonial-card">
-        <span class="testimonial-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M7 8c-2 1-3 3-3 6v3h6v-6H7c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 8c-2 1-3 3-3 6v3h6v-6h-3c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        </span>
-        <p class="testimonial-card__quote">São mais de 10 anos de parceria. É o tipo de suporte que você só percebe o valor quando compara com quem não tem.</p>
-        <p class="testimonial-card__meta"><strong>Ruti Fiais</strong> — Nicomo, cliente há +10 anos</p>
-      </article>
-      <article class="testimonial-card">
-        <span class="testimonial-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M7 8c-2 1-3 3-3 6v3h6v-6H7c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 8c-2 1-3 3-3 6v3h6v-6h-3c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        </span>
-        <p class="testimonial-card__quote">Há 3 anos com suporte remoto e segurança gerenciada pela DRLSYS. Nunca tivemos um incidente que nos pegasse de surpresa.</p>
-        <p class="testimonial-card__meta"><strong>Jessica</strong> — Contabilidade 2000, cliente há 3 anos</p>
-      </article>
-      <article class="testimonial-card">
-        <span class="testimonial-card__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M7 8c-2 1-3 3-3 6v3h6v-6H7c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M16 8c-2 1-3 3-3 6v3h6v-6h-3c0-1.5 1-2.5 2-3z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-        </span>
-        <p class="testimonial-card__quote">Nosso ambiente é híbrido, Mac e Windows na mesma rede com NAS interno. A DRLSYS é quem faz isso funcionar sem dor de cabeça.</p>
-        <p class="testimonial-card__meta"><strong>Fernando</strong> — Studio Vero</p>
-      </article>
+<section class="process" id="como-trabalhamos">
+  <div class="process__inner">
+  <p class="section-eyebrow reveal">COMO TRABALHAMOS</p>
+  <h2 class="reveal">Clareza desde o início.</h2>
+  <div class="process__grid">
+    <div class="process__item reveal">
+      <span class="process__num">01</span>
+      <h3>Diagnóstico</h3>
+      <p>Entendemos o ambiente atual, mapeamos riscos e identificamos o que precisa evoluir.</p>
     </div>
-    <p class="testimonials__note">*Todos os clientes acima contam com firewall pfSense gerenciado pela DRLSYS.</p>
+    <div class="process__item reveal">
+      <span class="process__num">02</span>
+      <h3>Plano</h3>
+      <p>Definimos arquitetura e prioridades técnicas, alinhadas ao orçamento e à operação do negócio.</p>
+    </div>
+    <div class="process__item reveal">
+      <span class="process__num">03</span>
+      <h3>Implementação</h3>
+      <p>Executamos com acompanhamento próximo, sem interromper a operação do cliente.</p>
+    </div>
+    <div class="process__item reveal">
+      <span class="process__num">04</span>
+      <h3>Suporte contínuo</h3>
+      <p>Acompanhamos, monitoramos e evoluímos a infraestrutura junto com o seu negócio.</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq__inner">
+  <p class="section-eyebrow reveal">DÚVIDAS FREQUENTES</p>
+  <h2 class="reveal">Antes de começar.</h2>
+  <div class="faq__list">
+    <details class="faq__item reveal">
+      <summary>Vocês atendem empresas fora de São Paulo?</summary>
+      <p>Sim. Atendemos clientes em São Paulo com suporte remoto e em campo, e clientes internacionais de forma 100% remota.</p>
+    </details>
+    <details class="faq__item reveal">
+      <summary>Já tenho uma infraestrutura montada — vocês assumem o suporte?</summary>
+      <p>Sim. Fazemos o diagnóstico do ambiente existente e assumimos a partir dali, sem precisar recomeçar do zero.</p>
+    </details>
+    <details class="faq__item reveal">
+      <summary>Quanto tempo leva um projeto de infraestrutura?</summary>
+      <p>Depende do escopo — pequenos ajustes levam alguns dias, projetos completos podem levar algumas semanas. Sempre planejados para não impactar sua operação.</p>
+    </details>
+    <details class="faq__item reveal">
+      <summary>Como funciona o suporte depois da entrega?</summary>
+      <p>Suporte contínuo, com atendimento remoto e em campo, SLA de 30 minutos após o chamado aberto para o primeiro contato e atendimento imediato em casos urgentes.</p>
+    </details>
+  </div>
   </div>
 </section>
 
 <section class="contact" id="contato">
   <div class="contact__inner">
-    <p class="section-eyebrow">PRÓXIMO PASSO</p>
-    <h2>Vamos colocar sua infraestrutura em ordem?</h2>
-    <p class="contact__text">Conte o tamanho da sua operação e o que está travando — a DRLSYS responde com um diagnóstico e um orçamento claro.</p>
-    <a class="contact__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Solicitar diagnóstico gratuito</a>
-    <div class="contact__meta">
-      <span>(11) 98953-1711</span>
+    <p class="section-eyebrow reveal">PRÓXIMO PASSO</p>
+    <h2 class="reveal">Vamos colocar sua infraestrutura em ordem?</h2>
+    <a class="contact__cta reveal" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Falar no WhatsApp · (11) 98953-1711</a>
+    <div class="contact__meta reveal">
+      <a href="mailto:joao@drlsys.com">joao@drlsys.com</a>
+      <a href="tel:+5511989531711">(11) 98953-1711</a>
+      <span>Cotia / SP</span>
     </div>
   </div>
 </section>
 
 <footer class="footer">
+  <span class="footer__logo">DRLSYS</span>
   <span>© 2026 DRLSYS. Todos os direitos reservados.</span>
-  <span>Infraestrutura, redes e sistemas.</span>
 </footer>
 
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=20260920e"></script>
 </body>
 </html>
