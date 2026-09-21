@@ -144,7 +144,7 @@
     },
     {
       num: "#004", name: "OnStage Academy", kind: "client work",
-      desc: "Cliente internacional — implantação de Office 365 e OneDrive para todo o grupo.",
+      desc: "Cliente internacional: implantação de Office 365 e OneDrive para todo o grupo.",
       media: "video", src: "assets/video/unit2-seguranca.mp4", poster: "assets/video/posters/unit2-seguranca.jpg",
       logos: [
         { src: "assets/images/logos/microsoft.svg", name: "Microsoft" },
