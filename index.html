@@ -179,7 +179,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260921a">
+<link rel="stylesheet" href="assets/css/style.css?v=20260929a">
 </head>
 <body>
 
@@ -409,6 +409,149 @@
   </div>
 </div>
 
+<section class="cases" id="cases">
+  <div class="cases__head">
+    <p class="section-eyebrow reveal">CASES</p>
+    <h2 class="reveal">Desafios reais, soluções aplicadas.</h2>
+    <p class="cases__intro reveal">Quatro operações, quatro setores diferentes. Em todas, a mesma missão: infraestrutura que não para.</p>
+    <div class="cases__tabs reveal">
+      <a href="#case-01">01 · Metalloys · Schem · Nicomo</a>
+      <a href="#case-02">02 · Sulmedic</a>
+      <a href="#case-03">03 · Studio Vero</a>
+      <a href="#case-04">04 · OnStage Academy</a>
+    </div>
+  </div>
+
+  <article class="case-block reveal" id="case-01">
+    <div class="case-block__top">
+      <span class="case-block__num">01</span>
+      <h3>Unificação de rede entre 3 empresas do grupo</h3>
+      <div class="case-block__tags"><span>CASE</span><span>INDÚSTRIA</span></div>
+    </div>
+    <div class="case-block__body">
+      <div class="case-block__stat">
+        <span class="case-block__stat-num">10+</span>
+        <span class="case-block__stat-label">anos de parceria contínua</span>
+        <p>Suporte ao grupo Metalloys, Schem e Nicomo sem interrupção de operação.</p>
+      </div>
+      <div class="case-block__text">
+        <h4>VISÃO GERAL</h4>
+        <p>Metalloys, Schem e Nicomo operam como um grupo industrial com várias unidades, mas cada empresa tinha sua própria estrutura de TI. A DRLSYS uniu a operação numa única arquitetura e acompanha o crescimento do grupo há mais de 10 anos.</p>
+        <h4>PROBLEMA</h4>
+        <ul>
+          <li>3 empresas com redes e domínios separados, sem padronização</li>
+          <li>Sem VPN segura entre matriz e filiais</li>
+          <li>Backup e e-mail corporativo sem redundância</li>
+        </ul>
+        <h4>ABORDAGEM</h4>
+        <ul>
+          <li>Active Directory com 3 domínios interligados, sobre virtualização Proxmox</li>
+          <li>VPN site-to-site IPSec conectando todas as unidades, com OpenVPN para acesso remoto</li>
+          <li>Firewall dedicado, backup Veeam e e-mail corporativo Zimbra</li>
+          <li>Rede Wi-Fi Ubiquiti e links de internet redundantes em todas as unidades</li>
+        </ul>
+        <a class="case-block__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="case-block reveal" id="case-02">
+    <div class="case-block__top">
+      <span class="case-block__num">02</span>
+      <h3>Wi-Fi de alta densidade em galpão industrial</h3>
+      <div class="case-block__tags"><span>CASE</span><span>INDÚSTRIA</span></div>
+    </div>
+    <div class="case-block__body">
+      <div class="case-block__stat">
+        <span class="case-block__stat-num case-block__stat-num--text">Alta densidade</span>
+        <span class="case-block__stat-label">Wi-Fi estável em ambiente industrial</span>
+        <p>Cobertura mesmo com obstáculos metálicos e interferência do galpão.</p>
+      </div>
+      <div class="case-block__text">
+        <h4>VISÃO GERAL</h4>
+        <p>Sulmedic opera em um galpão industrial, onde Wi-Fi comum não aguenta a distância, os obstáculos metálicos e o volume de dispositivos conectados.</p>
+        <h4>PROBLEMA</h4>
+        <ul>
+          <li>Wi-Fi convencional sem alcance nem estabilidade no galpão</li>
+          <li>Interferência de estruturas metálicas e distância entre pontos</li>
+          <li>Necessidade de rede confiável para toda a operação</li>
+        </ul>
+        <h4>ABORDAGEM</h4>
+        <ul>
+          <li>Projeto de rede Wi-Fi Ubiquiti de alta densidade</li>
+          <li>Pontos de acesso posicionados para cobertura industrial real</li>
+          <li>Rede testada e validada em toda a área operacional</li>
+        </ul>
+        <a class="case-block__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="case-block reveal" id="case-03">
+    <div class="case-block__top">
+      <span class="case-block__num">03</span>
+      <h3>Backup corporativo em ambiente misto Mac e Windows</h3>
+      <div class="case-block__tags"><span>CASE</span><span>SERVIÇOS</span></div>
+    </div>
+    <div class="case-block__body">
+      <div class="case-block__stat">
+        <span class="case-block__stat-num">2</span>
+        <span class="case-block__stat-label">sistemas operacionais numa rede só</span>
+        <p>Mac e Windows funcionando juntos, sem atrito.</p>
+      </div>
+      <div class="case-block__text">
+        <h4>VISÃO GERAL</h4>
+        <p>Studio Vero precisava de um storage de backup robusto para um ambiente misto de Mac e Windows na mesma rede.</p>
+        <h4>PROBLEMA</h4>
+        <ul>
+          <li>Dados sem rotina de backup confiável</li>
+          <li>Ambiente misto Mac + Windows difícil de padronizar</li>
+          <li>Risco de perda de dados sem redundância</li>
+        </ul>
+        <h4>ABORDAGEM</h4>
+        <ul>
+          <li>Storage de backup corporativo com NAS interno</li>
+          <li>Rotina de backup automatizada</li>
+          <li>Mac e Windows na mesma rede, funcionando sem conflito</li>
+        </ul>
+        <a class="case-block__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </article>
+
+  <article class="case-block reveal" id="case-04">
+    <div class="case-block__top">
+      <span class="case-block__num">04</span>
+      <h3>Todo o grupo migrado para a nuvem Microsoft</h3>
+      <div class="case-block__tags"><span>CASE</span><span>INTERNACIONAL</span></div>
+    </div>
+    <div class="case-block__body">
+      <div class="case-block__stat">
+        <span class="case-block__stat-num">100%</span>
+        <span class="case-block__stat-label">do grupo migrado para Office 365</span>
+        <p>E-mail e arquivos padronizados em todas as unidades.</p>
+      </div>
+      <div class="case-block__text">
+        <h4>VISÃO GERAL</h4>
+        <p>OnStage Academy é um cliente internacional que precisava padronizar e-mail e armazenamento em nuvem para todo o grupo, com suporte remoto.</p>
+        <h4>PROBLEMA</h4>
+        <ul>
+          <li>E-mail e arquivos sem padronização entre as unidades do grupo</li>
+          <li>Acesso a documentos dependente de servidores locais</li>
+          <li>Necessidade de suporte remoto para operação internacional</li>
+        </ul>
+        <h4>ABORDAGEM</h4>
+        <ul>
+          <li>Implantação de Office 365 para todo o grupo</li>
+          <li>OneDrive configurado e integrado para todos os usuários</li>
+          <li>Padronização e suporte remoto contínuo</li>
+        </ul>
+        <a class="case-block__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </article>
+</section>
+
 <section class="showcase" id="sites">
   <div class="showcase__inner">
     <p class="section-eyebrow reveal">SITES SOB MEDIDA</p>
@@ -428,6 +571,7 @@
       <select id="showcaseSelect" class="showcase__select">
         <option value="" selected>Clique aqui e escolha um modelo…</option>
         <option value="https://hanaoka.com.br/">Hanaoka (no ar)</option>
+        <option value="https://veiculojudicial.com.br/">Veículo Judicial (no ar)</option>
         <option value="https://jgdini.github.io/proposta-anunciantes-premiapao/">Premia Pão: campanha compartilhada</option>
         <option value="https://jgdini.github.io/proposta-anunciantes-premiapao/exclusivo.html">Premia Pão: campanha exclusiva</option>
         <option value="https://jgdini.github.io/aclaris/">Aclaris (modelo)</option>
@@ -540,6 +684,6 @@
   <span>© 2026 DRLSYS. Todos os direitos reservados.</span>
 </footer>
 
-<script src="assets/js/main.js?v=20260921a"></script>
+<script src="assets/js/main.js?v=20260929a"></script>
 </body>
 </html>
