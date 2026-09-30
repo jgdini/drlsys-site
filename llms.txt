@@ -7,14 +7,23 @@
 - WhatsApp / telefone: +55 11 98953-1711
 - Site: https://drlsys.com/
 
-## Serviços
-- Desenvolvimento de Sites: sites institucionais, landing pages e sistemas sob medida, pensados para SEO (Google) e para LLMs. Primeiro criamos um site-modelo; se o cliente gostar da ideia, enviamos o orçamento.
+## Soluções Premium
+- Sites Premium: não é só um site, é posicionamento. Equipe própria de marketing cuidando de SEO, AEO e GEO, com blog e painel de admin. Primeiro criamos um site-modelo; se o cliente gostar da ideia, enviamos o orçamento.
 - Suporte Completo de Infraestrutura: suporte remoto e em campo, com SLA de 30 minutos após o chamado aberto para o primeiro contato e atendimento imediato em casos urgentes.
+- Monitoramento: Zabbix monitorando servidores, rede e links 24/7, com alertas em tempo real no Telegram.
 - E-mail Zimbra Enterprise: migração, antispam e múltiplos domínios.
 - Backup Veeam: backup local e em nuvem, rotina automatizada e retenção em múltiplas camadas.
-- Firewall pfSense e FortiGate: hardening, VPN site-to-site e IPSec, filtragem de conteúdo.
+- Segurança de Perímetro: firewall pfSense, FortiGate e outras soluções, com VPN site-to-site, IPSec e filtragem de conteúdo.
 - Virtualização Microsoft Hyper-V e Proxmox: virtualização, migração física/virtual e alta disponibilidade.
-- Redes e Wi-Fi Ubiquiti: cabeamento estruturado, Wi-Fi de alta densidade e VLANs.
+- Redes, Wi-Fi e VPN: cabeamento estruturado, Wi-Fi Ubiquiti de alta densidade e VPN conectando escritórios, filiais e galpões.
+
+## Parceiros Estratégicos
+- ASR Consult: consultoria TOTVS / Protheus.
+- Thor Software: ERP Odin e Mjölnir.
+- Zucchetti: ERP.
+- Penso Tecnologia: e-mail Zimbra whitelabel.
+- SQI: impressoras outsourcing.
+- Advance e Synergy Tecnologia: telefonia e CRM.
 
 ## Como trabalhamos
 1. Diagnóstico do ambiente atual
