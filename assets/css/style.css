@@ -196,6 +196,8 @@ img{ max-width: 100%; display: block; }
 .service-card__list li::before{
   content: ""; position: absolute; left: 0; top: 0.6em; width: 5px; height: 5px; border-radius: 50%; background: var(--blue);
 }
+.service-card__list a{ color: var(--blue); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(46,109,164,0.35); }
+.service-card__list a:hover{ border-bottom-color: var(--blue); }
 @media (max-width: 1080px){ .services__grid{ grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px){ .services__grid{ grid-template-columns: 1fr; } }
 
@@ -220,114 +222,12 @@ img{ max-width: 100%; display: block; }
   display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 44px;
 }
 
-/* ============ portfolio — staggered mosaic grid (Tajima works-page style) ============ */
-.portfolio{ padding: 150px clamp(20px, 6vw, 90px) 130px; background: var(--white); }
-.portfolio__head{ max-width: 760px; margin: 0 auto 70px; }
-.portfolio h2{
-  font-family: var(--serif); font-size: clamp(2rem, 4.4vw, 3.4rem); font-weight: 600; line-height: 1.15;
-  letter-spacing: -0.01em; margin-top: 16px;
-}
-.portfolio__grid{
-  max-width: 1280px; margin: 0 auto;
-  column-count: 3; column-gap: 30px;
-}
-.portfolio-card{ break-inside: avoid; margin-bottom: 30px; }
-.portfolio-card__open{
-  all: unset; display: block; width: 100%; cursor: pointer; box-sizing: border-box;
-}
-.portfolio-card__thumb{
-  position: relative; display: flex; align-items: center; justify-content: center;
-  aspect-ratio: 4 / 3; border-radius: 4px; overflow: hidden;
-  background: linear-gradient(150deg, #eef2f6 0%, #dbe3ea 100%);
-  color: var(--ink-soft); transition: transform .35s ease;
-}
-.portfolio-card__thumb.is-tall{ aspect-ratio: 3 / 4; }
-.portfolio-card__thumb.is-short{ aspect-ratio: 16 / 10; }
-.portfolio-card__thumb.is-self{ background: linear-gradient(150deg, var(--navy) 0%, var(--blue) 100%); color: rgba(255,255,255,0.9); }
-.portfolio-card:nth-child(3n+2) .portfolio-card__thumb{ background: linear-gradient(150deg, #eef1fb 0%, #dde3f2 100%); }
-.portfolio-card:nth-child(3n+3) .portfolio-card__thumb{ background: linear-gradient(150deg, #eef6f6 0%, #dde9e9 100%); }
-.portfolio-card__open:hover .portfolio-card__thumb{ transform: scale(1.02); }
-.portfolio-card__media{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
-/* A real photo/video sits under the play glyph — scrim it slightly so the
-   icon and the (transparent) SVG stroke stay legible over bright footage. */
-.portfolio-card__thumb.has-media{ color: #ffffff; }
-.portfolio-card__thumb.has-media::after{
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(0deg, rgba(15,23,42,0.35) 0%, rgba(15,23,42,0) 45%);
-}
-.portfolio-card__thumb.has-media svg{ position: relative; z-index: 1; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
-.portfolio-card__meta{ display: flex; align-items: baseline; gap: 12px; margin-top: 16px; }
-.portfolio-card__desc{ margin-top: 8px; color: var(--ink-dim); font-size: 0.9rem; line-height: 1.5; }
-.portfolio-card__logos, .portfolio-lightbox__logos{ display: flex; flex-wrap: wrap; gap: 10px; }
-.portfolio-card__logos{ margin-top: 12px; }
-.portfolio-lightbox__logos{ margin-top: 16px; }
-.portfolio-lightbox__logos:empty, .portfolio-card__logos:empty{ display: none; }
+/* ============ shared logo chip (tecnologias / parceiros / cases) ============ */
 .portfolio-logo-chip{
   display: flex; align-items: center; justify-content: center; height: 48px; padding: 0 16px;
   background: var(--gray); border: 1px solid var(--line); border-radius: 6px;
 }
 .portfolio-logo-chip img{ max-height: 30px; max-width: 128px; width: auto; height: auto; object-fit: contain; }
-.portfolio-card__num{ font-family: var(--serif); font-style: italic; font-size: 0.92rem; color: var(--ink-soft); }
-.portfolio-card__name{ font-size: 1.08rem; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); transition: color .2s ease; }
-.portfolio-card__open:hover .portfolio-card__name{ color: var(--blue); }
-@media (max-width: 980px){ .portfolio__grid{ column-count: 2; } }
-@media (max-width: 620px){ .portfolio__grid{ column-count: 1; } }
-
-/* ---- lightbox (mimics Tajima's per-project page: big title + media + bottom prev/next slider) ---- */
-.portfolio-lightbox{
-  position: fixed; inset: 0; z-index: 300; display: flex; align-items: center; justify-content: center;
-  padding: clamp(16px, 4vw, 40px); opacity: 0; pointer-events: none; transition: opacity .3s ease;
-}
-.portfolio-lightbox.is-open{ opacity: 1; pointer-events: auto; }
-.portfolio-lightbox__backdrop{ position: absolute; inset: 0; background: rgba(10,20,32,0.82); backdrop-filter: blur(6px); }
-.portfolio-lightbox__panel{
-  position: relative; width: 100%; max-width: 880px; max-height: 88vh; overflow-y: auto;
-  background: var(--white); border-radius: 8px; padding: clamp(28px, 5vw, 56px);
-  transform: translateY(16px); transition: transform .3s ease;
-}
-.portfolio-lightbox.is-open .portfolio-lightbox__panel{ transform: translateY(0); }
-.portfolio-lightbox__close{
-  all: unset; position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.4rem; line-height: 1;
-  color: var(--ink-soft); transition: background .2s ease, color .2s ease;
-}
-.portfolio-lightbox__close:hover{ background: var(--gray); color: var(--ink); }
-.portfolio-lightbox__tag{ font-family: var(--serif); font-style: italic; font-size: 0.95rem; color: var(--blue); }
-.portfolio-lightbox__tag em{ font-style: italic; color: var(--ink-soft); }
-#lightboxTitle{ font-family: var(--serif); font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 600; margin-top: 8px; letter-spacing: -0.01em; }
-.portfolio-lightbox__media{
-  position: relative; aspect-ratio: 16 / 9; width: 100%; margin-top: 26px; border-radius: 6px; overflow: hidden;
-  background: linear-gradient(150deg, #eef2f6 0%, #e2e8ee 100%); display: flex; align-items: center; justify-content: center;
-}
-.portfolio-lightbox__media.is-self{ background: linear-gradient(150deg, var(--navy) 0%, var(--blue) 100%); }
-.portfolio-lightbox__media a{ position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
-.portfolio-lightbox__media-placeholder{ display: flex; flex-direction: column; align-items: center; gap: 10px; color: var(--ink-soft); }
-.portfolio-lightbox__media.is-self .portfolio-lightbox__media-placeholder{ color: rgba(255,255,255,0.9); }
-.portfolio-lightbox__media-placeholder em{ font-style: normal; font-size: 0.82rem; letter-spacing: 0.04em; }
-.portfolio-lightbox__video,
-.portfolio-lightbox__photo{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
-.portfolio-lightbox__desc{ margin-top: 26px; color: var(--ink-dim); font-size: 1.04rem; line-height: 1.65; max-width: 60ch; }
-.portfolio-lightbox__desc a{ color: var(--blue); font-weight: 600; border-bottom: 1px solid rgba(46,109,164,0.35); }
-.portfolio-lightbox__nav{
-  display: flex; justify-content: space-between; gap: 16px; margin-top: 40px; padding-top: 26px;
-  border-top: 1px solid var(--line);
-}
-.portfolio-lightbox__prev, .portfolio-lightbox__next{
-  all: unset; display: flex; align-items: center; gap: 10px; cursor: pointer; color: var(--ink-soft);
-  transition: color .2s ease; max-width: 46%;
-}
-.portfolio-lightbox__next{ margin-left: auto; text-align: right; flex-direction: row-reverse; }
-.portfolio-lightbox__prev:hover, .portfolio-lightbox__next:hover{ color: var(--navy); }
-.portfolio-lightbox__prev span, .portfolio-lightbox__next span{ display: flex; flex-direction: column; gap: 2px; }
-.portfolio-lightbox__prev em, .portfolio-lightbox__next em{
-  font-family: var(--serif); font-style: italic; font-size: 0.8rem; color: var(--ink-soft);
-}
-.portfolio-lightbox__prev b, .portfolio-lightbox__next b{ font-weight: 600; font-size: 0.94rem; color: inherit; }
-@media (max-width: 560px){
-  .portfolio-lightbox__nav{ flex-direction: column; gap: 20px; }
-  .portfolio-lightbox__prev, .portfolio-lightbox__next{ max-width: none; }
-  .portfolio-lightbox__next{ flex-direction: row; text-align: left; margin-left: 0; }
-}
 
 /* ============ cases (problema / abordagem, B&F Dias-style) ============ */
 .cases{ padding: 130px clamp(20px, 6vw, 90px) 60px; background: var(--gray); }
