@@ -53,14 +53,14 @@
       ],
       "knowsAbout": [
         "Infraestrutura de TI",
-        "Redes Ubiquiti",
-        "Firewall pfSense",
-        "FortiGate",
+        "Redes Ubiquiti e VPN",
+        "Segurança de perímetro (pfSense, FortiGate)",
+        "Monitoramento Zabbix",
         "Virtualização Proxmox e Hyper-V",
         "Backup Veeam",
         "E-mail Zimbra",
         "Desenvolvimento de sites",
-        "SEO"
+        "SEO, AEO e GEO"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -70,7 +70,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Desenvolvimento de Sites"
+              "name": "Sites Premium"
             }
           },
           {
@@ -78,6 +78,13 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Suporte Completo de Infraestrutura"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Monitoramento com Zabbix"
             }
           },
           {
@@ -98,7 +105,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Firewall pfSense"
+              "name": "Segurança de Perímetro"
             }
           },
           {
@@ -112,14 +119,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Redes e Wi-Fi Ubiquiti"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "FortiGate: segurança de perímetro"
+              "name": "Redes, Wi-Fi e VPN"
             }
           }
         ]
@@ -179,7 +179,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260930b">
+<link rel="stylesheet" href="assets/css/style.css?v=20260930c">
 </head>
 <body>
 
@@ -243,11 +243,12 @@
     <div class="services__grid">
       <article class="service-card reveal">
         <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg></span>
-        <h3>Desenvolvimento de Sites</h3>
-        <p>Sites institucionais, landing pages e sistemas sob medida.</p>
+        <h3>Sites Premium</h3>
+        <p>Não é só um site: é posicionamento. Equipe própria de marketing cuidando de SEO, AEO e GEO para você aparecer no Google e nas IAs.</p>
         <ul class="service-card__list">
           <li>Site-modelo antes do orçamento</li>
-          <li>Estrutura pensada para Google e IAs</li>
+          <li>SEO, AEO e GEO (Google e IAs)</li>
+          <li>Blog e painel de admin para atualizar sozinho</li>
           <li>Modelos navegáveis na seção Sites</li>
         </ul>
       </article>
@@ -260,6 +261,16 @@
           <li>Imediato em casos urgentes</li>
           <li>Atendimento remoto e em campo</li>
           <li>Monitoramento contínuo</li>
+        </ul>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8l4 -16l3 8h4" /></svg></span>
+        <h3>Monitoramento</h3>
+        <p>Zabbix monitorando servidores, rede e links 24/7, com alertas em tempo real direto no Telegram.</p>
+        <ul class="service-card__list">
+          <li>Alertas em tempo real no Telegram</li>
+          <li>Monitoramento de servidores e links</li>
+          <li>Ação antes do problema virar parada</li>
         </ul>
       </article>
       <article class="service-card reveal">
@@ -283,13 +294,13 @@
         </ul>
       </article>
       <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -4" /><path d="M17 17l0 .01" /><path d="M13 17l0 .01" /><path d="M15 13l0 -2" /><path d="M11.75 8.75a4 4 0 0 1 6.5 0" /><path d="M8.5 6.5a8 8 0 0 1 13 0" /></svg></span>
-        <h3>Firewall pfSense</h3>
-        <p>Proteção de rede open-source configurada e gerenciada pela DRLSYS.</p>
+        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" /><path d="M15 19l2 2l4 -4" /></svg></span>
+        <h3>Segurança de Perímetro</h3>
+        <p>Firewall pfSense, FortiGate e outras soluções, configuradas e gerenciadas pela DRLSYS.</p>
         <ul class="service-card__list">
-          <li>Configuração e hardening</li>
-          <li>VPN site-to-site</li>
-          <li>Monitoramento de tráfego</li>
+          <li>Firewall de próxima geração</li>
+          <li>VPN site-to-site e IPSec</li>
+          <li>Filtragem de conteúdo e hardening</li>
         </ul>
       </article>
       <article class="service-card reveal">
@@ -304,22 +315,12 @@
       </article>
       <article class="service-card reveal">
         <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12l0 .01" /><path d="M14.828 9.172a4 4 0 0 1 0 5.656" /><path d="M17.657 6.343a8 8 0 0 1 0 11.314" /><path d="M9.168 14.828a4 4 0 0 1 0 -5.656" /><path d="M6.337 17.657a8 8 0 0 1 0 -11.314" /></svg></span>
-        <h3>Redes e Wi-Fi Ubiquiti</h3>
-        <p>Redes Ubiquiti para escritórios e galpões industriais.</p>
+        <h3>Redes, Wi-Fi e VPN</h3>
+        <p>Cabeamento estruturado, Wi-Fi Ubiquiti de alta densidade e VPN conectando escritórios, filiais e galpões.</p>
         <ul class="service-card__list">
-          <li>Cabeamento estruturado</li>
-          <li>Wi-Fi de alta densidade</li>
-          <li>Segmentação por VLANs</li>
-        </ul>
-      </article>
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" /><path d="M15 19l2 2l4 -4" /></svg></span>
-        <h3>FortiGate: segurança de perímetro</h3>
-        <p>Firewall FortiGate protegendo a entrada e a saída da rede.</p>
-        <ul class="service-card__list">
-          <li>Firewall de próxima geração</li>
-          <li>VPN IPSec</li>
-          <li>Filtragem de conteúdo</li>
+          <li>Projetos de Wi-Fi para escritórios e galpões</li>
+          <li>Cabeamento estruturado e VLANs</li>
+          <li>VPN site-to-site e acesso remoto seguro</li>
         </ul>
       </article>
     </div>
@@ -688,6 +689,6 @@
   <span>© 2026 DRLSYS. Todos os direitos reservados.</span>
 </footer>
 
-<script src="assets/js/main.js?v=20260930b"></script>
+<script src="assets/js/main.js?v=20260930c"></script>
 </body>
 </html>
