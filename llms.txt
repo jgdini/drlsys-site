@@ -8,7 +8,7 @@
 - Site: https://drlsys.com/
 
 ## Soluções Premium
-- Sites Premium: não é só um site, é posicionamento. Equipe própria de marketing cuidando de SEO, AEO e GEO, com blog e painel de admin. Primeiro criamos um site-modelo; se o cliente gostar da ideia, enviamos o orçamento.
+- Sites Premium: um site que posiciona a empresa. Equipe de marketing cuida de SEO, AEO e GEO, com blog e painel de admin. Primeiro criamos um site-modelo; se o cliente gostar da ideia, enviamos o orçamento.
 - Suporte Completo de Infraestrutura: suporte remoto e em campo, com SLA de 30 minutos após o chamado aberto para o primeiro contato e atendimento imediato em casos urgentes.
 - Monitoramento: Zabbix monitorando servidores, rede e links 24/7, com alertas em tempo real no Telegram.
 - E-mail Zimbra Enterprise: migração, antispam e múltiplos domínios.

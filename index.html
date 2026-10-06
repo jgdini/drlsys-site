@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DRLSYS | Infraestrutura de TI, Redes, Segurança e Sites em Cotia/SP</title>
-<meta name="description" content="DRLSYS: infraestrutura de TI, servidores, redes, segurança, backup, e-mail corporativo e sites para empresas que não podem parar. Suporte remoto com primeiro contato em até 30 minutos. Cotia/SP.">
+<title>DRLSYS | Infraestrutura de TI, Redes e Segurança em Cotia/SP</title>
+<meta name="description" content="Infraestrutura de TI, redes, segurança, backup, e-mail Zimbra e sites premium para empresas que não podem parar. Primeiro contato em até 30 minutos. Cotia/SP.">
 <link rel="canonical" href="https://drlsys.com/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#1A3A5C">
@@ -176,10 +176,9 @@
 }
 </script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%231A3A5C%22/><text x=%2250%22 y=%2266%22 font-size=%2252%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 fill=%22%23ffffff%22>D</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260930e">
+<link rel="preload" href="assets/fonts/newsreader-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css?v=20261006b">
 </head>
 <body>
 
@@ -187,9 +186,9 @@
 
 <nav class="nav" id="nav">
   <a href="#top" class="nav__logo" aria-label="DRLSYS">
-    <img class="nav__logo-img" src="assets/images/brand/drlsys-wordmark.png" alt="DRLSYS">
+    <img class="nav__logo-img" src="assets/images/brand/drlsys-wordmark.png" alt="DRLSYS" width="540" height="229" fetchpriority="high">
   </a>
-  <div class="nav__links">
+  <div class="nav__links" id="navMenu">
     <a href="#servicos">Soluções Premium</a>
     <a href="#cases">Cases</a>
     <a href="#parceiros">Parceiros Estratégicos</a>
@@ -197,28 +196,83 @@
     <a href="#contato">Contato</a>
   </div>
   <a href="#contato" class="nav__cta">Fale conosco</a>
+  <button type="button" class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <header class="hero" id="top">
-  <video class="hero__video" poster="assets/video/posters/hero.jpg" src="assets/video/hero.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-  <div class="hero__video-overlay" aria-hidden="true"></div>
-  <div class="hero__particles" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="hero__grid" aria-hidden="true"></div>
   <div class="hero__inner">
-    <p class="hero__eyebrow reveal">INFRAESTRUTURA · SEGURANÇA · TECNOLOGIA</p>
-    <h1 class="hero__title reveal">Servidores, redes e segurança<br>que não param.</h1>
-    <p class="hero__subtitle reveal">Suporte remoto com primeiro contato em até 30 minutos e sites feitos para o Google e para IAs.</p>
-    <a href="#cases" class="hero__cta reveal">
-      <span>Conheça nosso trabalho</span>
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <p class="hero__eyebrow">INFRAESTRUTURA · SEGURANÇA · TECNOLOGIA</p>
+    <h1 class="hero__title">Servidores, redes<br>e segurança<br>que não param.</h1>
+    <p class="hero__subtitle">Suporte remoto com primeiro contato em até 30 minutos e sites feitos para o Google e para IAs.</p>
+    <div class="hero__actions">
+      <a href="https://wa.me/5511989531711" class="hero__cta" target="_blank" rel="noopener">
+        <span>Falar com um especialista</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#cases" class="hero__link">Ver cases</a>
+    </div>
   </div>
+  <figure class="noc">
+    <div class="noc__bar">
+      <span class="noc__live"><i class="noc__dot" aria-hidden="true"></i>Ambiente monitorado</span>
+      <span>Exemplo ilustrativo</span>
+    </div>
+    <svg class="noc__svg" viewBox="0 0 520 250" role="img" aria-label="Diagrama: a matriz conecta o backup em nuvem, a filial e a unidade industrial por VPN">
+      <path class="noc__link" d="M95 125H195"/>
+      <path class="noc__link" d="M255 118C320 118 335 58 385 58"/>
+      <path class="noc__link" d="M255 132C320 132 335 192 385 192"/>
+      <path class="noc__link noc__link--spare" d="M415 80C455 110 455 140 415 170"/>
+      <path class="noc__flow" d="M95 125H195"/>
+      <path class="noc__flow" d="M255 118C320 118 335 58 385 58"/>
+      <path class="noc__flow" d="M255 132C320 132 335 192 385 192"/>
+      <text class="noc__tag" x="145" y="114">Backup Veeam</text>
+      <text class="noc__tag" x="316" y="108">VPN IPSec</text>
+      <text class="noc__tag" x="316" y="150">VPN IPSec</text>
+      <text class="noc__tag" x="468" y="128">link redundante</text>
+      <circle class="noc__packet" r="2.6"><animateMotion dur="2.4s" repeatCount="indefinite" path="M95 125H195"/></circle>
+      <circle class="noc__packet" r="2.6"><animateMotion dur="3s" begin="-1s" repeatCount="indefinite" path="M255 118C320 118 335 58 385 58"/></circle>
+      <circle class="noc__packet" r="2.6"><animateMotion dur="3.4s" begin="-2s" repeatCount="indefinite" path="M385 192C335 192 320 132 255 132"/></circle>
+      <g class="noc__node" transform="translate(65 125)">
+        <rect class="noc__box" x="-30" y="-22" width="60" height="44" rx="9"/>
+        <path class="noc__glyph" d="M-12 8a6 6 0 0 1 0-12a8 8 0 0 1 15-2a6 6 0 0 1 3 14z"/>
+        <circle class="noc__ok" cx="24" cy="-15" r="3.2"/>
+        <text y="40">Nuvem</text>
+      </g>
+      <g class="noc__node" transform="translate(225 125)">
+        <rect class="noc__box" x="-30" y="-22" width="60" height="44" rx="9"/>
+        <path class="noc__glyph" d="M-14 -9h28M-14 0h28M-14 9h28"/>
+        <circle class="noc__ok" cx="24" cy="-15" r="3.2"/>
+        <text y="40">Matriz</text>
+      </g>
+      <g class="noc__node" transform="translate(415 58)">
+        <rect class="noc__box" x="-30" y="-22" width="60" height="44" rx="9"/>
+        <path class="noc__glyph" d="M-12 12V-12h24v24M-6 -5h4M2 -5h4M-6 3h4M2 3h4"/>
+        <circle class="noc__ok" cx="24" cy="-15" r="3.2"/>
+        <text y="-32">Filial</text>
+      </g>
+      <g class="noc__node" transform="translate(415 192)">
+        <rect class="noc__box" x="-30" y="-22" width="60" height="44" rx="9"/>
+        <path class="noc__glyph" d="M-15 12V-2l10-6v6l10-6v6l10-6V12z"/>
+        <circle class="noc__ok" cx="24" cy="-15" r="3.2"/>
+        <text y="40">Unidade industrial</text>
+      </g>
+    </svg>
+    <div class="noc__tiles">
+      <div class="noc__tile"><b>Ativa</b><span>VPN site-to-site</span></div>
+      <div class="noc__tile"><b><em data-noc-latency>12</em> ms</b><span>Latência</span></div>
+      <div class="noc__tile"><b>OK</b><span>Backup Veeam</span></div>
+      <div class="noc__tile"><b>0</b><span>Alertas abertos</span></div>
+    </div>
+    <figcaption class="noc__note">Exemplo de um ambiente monitorado com Zabbix. Os alertas chegam direto no Telegram.</figcaption>
+  </figure>
   <a href="#servicos" class="hero__scrollhint" aria-label="Rolar para baixo">
     <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 1v20M8 21l6-6M8 21l-6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </a>
 </header>
 
+
+<main id="conteudo">
 <section class="stats">
   <div class="stats__grid">
     <div class="stats__item reveal">
@@ -244,7 +298,7 @@
       <article class="service-card reveal">
         <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg></span>
         <h3>Sites Premium</h3>
-        <p>Não é só um site: é posicionamento. Equipe própria de marketing cuidando de SEO, AEO e GEO para você aparecer no Google e nas IAs.</p>
+        <p>Um site que posiciona a sua empresa. Nossa equipe de marketing cuida de SEO, AEO e GEO para você aparecer no Google e nas IAs.</p>
         <ul class="service-card__list">
           <li>Site-modelo antes do orçamento</li>
           <li>SEO, AEO e GEO (Google e IAs)</li>
@@ -331,15 +385,15 @@
   <p class="section-eyebrow reveal">TECNOLOGIAS</p>
   <h2 class="reveal">Plataformas que usamos.</h2>
   <div class="stack__row reveal">
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/microsoft.svg" alt="Microsoft"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/office365.svg" alt="Office 365"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/ubiquiti.svg" alt="Ubiquiti"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/veeam.png" alt="Veeam"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/zimbra.png" alt="Zimbra"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/proxmox.svg" alt="Proxmox"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/pfsense.svg" alt="pfSense"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/fortinet.svg" alt="Fortinet"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/eset.svg" alt="ESET"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/microsoft.svg" alt="Microsoft" width="338" height="72" loading="lazy" decoding="async"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/office365.svg" alt="Office 365" width="200" height="64" loading="lazy" decoding="async"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/ubiquiti.svg" alt="Ubiquiti" width="128" height="129" loading="lazy" decoding="async"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/veeam.png" alt="Veeam" width="192" height="108" loading="lazy" decoding="async"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/zimbra.png" alt="Zimbra" width="256" height="56" loading="lazy" decoding="async"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/proxmox.svg" alt="Proxmox" width="1024" height="162" loading="lazy" decoding="async"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/pfsense.svg" alt="pfSense" width="277" height="78" loading="lazy" decoding="async"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/fortinet.svg" alt="Fortinet" width="1024" height="124" loading="lazy" decoding="async"></span>
+    <span class="portfolio-logo-chip"><img src="assets/images/logos/eset.svg" alt="ESET" width="182" height="72" loading="lazy" decoding="async"></span>
   </div>
 </section>
 
@@ -347,7 +401,7 @@
   <div class="cases__head">
     <p class="section-eyebrow reveal">CASES</p>
     <h2 class="reveal">Desafios reais, soluções aplicadas.</h2>
-    <p class="cases__intro reveal">Quatro operações, quatro setores diferentes. Em todas, a mesma missão: infraestrutura que não para.</p>
+    <p class="cases__intro reveal">Quatro operações de setores diferentes, todas com a mesma exigência: a infraestrutura não pode parar.</p>
     <div class="cases__tabs reveal">
       <a href="#case-01">01 · Metalloys · Schem · Nicomo</a>
       <a href="#case-02">02 · Sulmedic</a>
@@ -529,21 +583,21 @@
 </section>
 
 <section class="partners" id="parceiros">
-  <p class="section-eyebrow reveal">PARCERIAS</p>
+  <h2 class="section-eyebrow reveal">PARCEIROS ESTRATÉGICOS</h2>
   <div class="partners__row reveal">
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/asrconsult-navy.png" alt="ASR Consult"></span><span class="partners__label">Consultoria TOTVS · Protheus</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/thorsoftware.png" alt="Thor Software"></span><span class="partners__label">ERP Odin · Mjölnir</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/zucchetti.svg" alt="Zucchetti"></span><span class="partners__label">ERP Zucchetti</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/penso.svg" alt="Penso Tecnologia"></span><span class="partners__label">E-mail Zimbra whitelabel</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/sqi.png" alt="SQI"></span><span class="partners__label">Impressoras outsourcing</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/advance.png" alt="Advance"></span><span class="partners__label">Telefonia e CRM</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/synergy.png" alt="Synergy Tecnologia"></span><span class="partners__label">Telefonia e CRM</span></span>
+    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/asrconsult-navy.png" alt="ASR Consult" width="256" height="74" loading="lazy" decoding="async"></span><span class="partners__label">Consultoria TOTVS · Protheus</span></span>
+    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/thorsoftware.png" alt="Thor Software" width="278" height="52" loading="lazy" decoding="async"></span><span class="partners__label">ERP Odin · Mjölnir</span></span>
+    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/zucchetti.svg" alt="Zucchetti" width="136" height="30" loading="lazy" decoding="async"></span><span class="partners__label">ERP Zucchetti</span></span>
+    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/penso.svg" alt="Penso Tecnologia" width="104" height="25" loading="lazy" decoding="async"></span><span class="partners__label">E-mail Zimbra whitelabel</span></span>
+    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/sqi.png" alt="SQI" width="96" height="96" loading="lazy" decoding="async"></span><span class="partners__label">Impressoras outsourcing</span></span>
+    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/advance.png" alt="Advance" width="96" height="96" loading="lazy" decoding="async"></span><span class="partners__label">Telefonia e CRM</span></span>
+    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/synergy.png" alt="Synergy Tecnologia" width="150" height="113" loading="lazy" decoding="async"></span><span class="partners__label">Telefonia e CRM</span></span>
   </div>
 </section>
 
 <section class="about" id="sobre">
   <div class="about__inner">
-    <p class="section-eyebrow reveal">SOBRE</p>
+    <h2 class="section-eyebrow reveal">SOBRE</h2>
     <p class="about__quote reveal">"João Dini: 18+ anos de experiência em TI. Especialista em redes, servidores e segurança para empresas de médio e grande porte. Atendo empresas em São Paulo e clientes internacionais."</p>
   </div>
 </section>
@@ -614,12 +668,13 @@
     </div>
   </div>
 </section>
+</main>
 
 <footer class="footer">
   <span class="footer__logo">DRLSYS</span>
   <span>© 2026 DRLSYS. Todos os direitos reservados.</span>
 </footer>
 
-<script src="assets/js/main.js?v=20260930e"></script>
+<script src="assets/js/main.js?v=20261006b"></script>
 </body>
 </html>
