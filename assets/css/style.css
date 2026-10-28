@@ -492,5 +492,9 @@ img{ max-width: 100%; display: block; }
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
   padding: 30px clamp(20px, 5vw, 56px); background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.82rem;
 }
-.footer a{ text-decoration: underline; text-underline-offset: 2px; }
+.footer__halo{ display: inline-flex; align-items: center; gap: 7px; vertical-align: middle; font-weight: 600; letter-spacing: -0.01em; color: rgba(255,255,255,0.85); transition: color .3s ease; }
+.footer__halo:hover{ color: #ffffff; }
+.footer__halo small{ font-size: 0.65em; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; }
+.footer__halo-sym{ flex: none; transition: transform .8s cubic-bezier(.34,1.56,.64,1); }
+.footer__halo:hover .footer__halo-sym{ transform: rotate(120deg); }
 .footer__logo{ font-family: var(--serif); font-weight: 700; color: #ffffff; letter-spacing: 0.02em; }
