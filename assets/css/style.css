@@ -492,4 +492,5 @@ img{ max-width: 100%; display: block; }
   display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
   padding: 30px clamp(20px, 5vw, 56px); background: var(--navy); color: rgba(255,255,255,0.7); font-size: 0.82rem;
 }
+.footer a{ text-decoration: underline; text-underline-offset: 2px; }
 .footer__logo{ font-family: var(--serif); font-weight: 700; color: #ffffff; letter-spacing: 0.02em; }
