@@ -186,11 +186,7 @@ img{ max-width: 100%; display: block; }
   font-size: 0.72rem; letter-spacing: 0.1em; color: #8fb0cf; text-transform: uppercase;
 }
 .noc__live{ display: inline-flex; align-items: center; gap: 8px; font-weight: 700; color: #e8f1f9; }
-.noc__dot{ width: 8px; height: 8px; border-radius: 50%; background: #4ade80; animation: nocPulse 2s ease-out infinite; }
-@keyframes nocPulse{
-  0%{ box-shadow: 0 0 0 0 rgba(74,222,128,0.55); }
-  70%, 100%{ box-shadow: 0 0 0 9px rgba(74,222,128,0); }
-}
+.noc__dot{ width: 8px; height: 8px; border-radius: 50%; background: #4ade80; }
 .noc__svg{ display: block; width: 100%; height: auto; margin: 6px 0 4px; }
 .noc__node rect.noc__box{ fill: #12293f; stroke: rgba(143,176,207,0.55); stroke-width: 1.2; }
 .noc__node .noc__glyph{ stroke: #a9c3dc; stroke-width: 1.4; fill: none; stroke-linecap: round; }
@@ -208,7 +204,7 @@ img{ max-width: 100%; display: block; }
 }
 .noc__tile b{ display: block; font-size: 1rem; font-weight: 700; color: #ffffff; font-variant-numeric: tabular-nums; }
 .noc__tile em{ font-style: normal; }
-.noc__tile span{ display: block; margin-top: 3px; font-size: 0.64rem; letter-spacing: 0.06em; color: #8fb0cf; text-transform: uppercase; }
+.noc__tile span{ display: block; margin-top: 3px; font-size: 0.72rem; letter-spacing: 0.06em; color: #a9c3dc; text-transform: uppercase; }
 .noc__note{ margin-top: 12px; font-size: 0.72rem; line-height: 1.5; color: #7f9db9; }
 @media (max-width: 980px){
   .hero{ grid-template-columns: minmax(0, 1fr); min-height: 0; padding-top: 130px; padding-bottom: 80px; }
@@ -225,14 +221,7 @@ img{ max-width: 100%; display: block; }
 /* ============ services (light mode) ============ */
 .services{
   padding: 140px clamp(20px, 6vw, 90px) 120px;
-  /* Real photo of a client Ubiquiti rack (not stock, not AI) — washed with the
-     section's own light tint so the card grid on top stays crisp. */
-  background-image:
-    linear-gradient(180deg, rgba(245,245,245,0.94) 0%, rgba(245,245,245,0.97) 45%, var(--gray) 100%),
-    url('../images/services-bg-ubiquiti.webp');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+  background: var(--gray);
 }
 .services__inner{ max-width: 1240px; margin: 0 auto; }
 .services h2{
@@ -494,7 +483,7 @@ img{ max-width: 100%; display: block; }
 }
 .footer__halo{ display: inline-flex; align-items: center; gap: 7px; vertical-align: middle; font-weight: 600; letter-spacing: -0.01em; color: rgba(255,255,255,0.85); transition: color .3s ease; }
 .footer__halo:hover{ color: #ffffff; }
-.footer__halo small{ font-size: 0.65em; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; }
+.footer__halo small{ font-size: 0.85em; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.85; }
 .footer__halo-sym{ flex: none; transition: transform .8s cubic-bezier(.34,1.56,.64,1); }
 .footer__halo:hover .footer__halo-sym{ transform: rotate(120deg); }
 .footer__logo{ font-family: var(--serif); font-weight: 700; color: #ffffff; letter-spacing: 0.02em; }
