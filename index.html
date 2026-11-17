@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 <meta name="description" content="Infraestrutura de TI, redes, segurança, backup, e-mail Zimbra e sites premium para empresas que não podem parar. Primeiro contato em até 30 minutos. Cotia/SP.">
 <link rel="canonical" href="https://drlsys.com/">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="theme-color" content="#1A3A5C">
+<meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DRLSYS">
 <meta property="og:locale" content="pt_BR">
@@ -176,17 +176,18 @@
 }
 </script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%231A3A5C%22/><text x=%2250%22 y=%2266%22 font-size=%2252%22 text-anchor=%22middle%22 font-family=%22Georgia,serif%22 font-weight=%22700%22 fill=%22%23ffffff%22>D</text></svg>">
-<link rel="preload" href="assets/fonts/newsreader-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/inter-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20261103a">
+<link rel="preload" href="assets/fonts/red-hat-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/red-hat-text.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css?v=20261117a">
 </head>
 <body>
 
-<div class="progress-rail"><div class="progress-rail__fill" id="pageProgress"></div></div>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<nav class="nav" id="nav">
-  <a href="#top" class="nav__logo" aria-label="DRLSYS">
+<nav class="nav" id="nav" aria-label="Principal">
+  <a href="#top" class="nav__logo" aria-label="DRLSYS, início">
     <img class="nav__logo-img" src="assets/images/brand/drlsys-wordmark.png" alt="DRLSYS" width="540" height="229" fetchpriority="high">
+    <span class="nav__shine" aria-hidden="true"><i></i></span>
   </a>
   <div class="nav__links" id="navMenu">
     <a href="#servicos">Soluções Premium</a>
@@ -195,183 +196,248 @@
     <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </div>
-  <a href="#contato" class="nav__cta">Fale conosco</a>
+  <a href="#contato" class="btn btn--sm nav__cta">Fale conosco</a>
   <button type="button" class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
 </nav>
 
 <header class="hero" id="top">
-  <div class="hero__grid" aria-hidden="true"></div>
   <div class="hero__inner">
-    <p class="hero__eyebrow">INFRAESTRUTURA · SEGURANÇA · TECNOLOGIA</p>
-    <h1 class="hero__title">Servidores, redes<br>e segurança<br>que não param.</h1>
-    <p class="hero__subtitle">Suporte remoto com primeiro contato em até 30 minutos e sites feitos para o Google e para IAs.</p>
-    <div class="hero__actions">
-      <a href="https://wa.me/5511989531711" class="hero__cta" target="_blank" rel="noopener">
-        <span>Falar com um especialista</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#cases" class="hero__link">Ver cases</a>
+    <div class="hero__copy">
+      <h1 class="hero__title">Servidores, redes<br>e segurança<br>que não param.</h1>
+      <p class="hero__subtitle">Suporte remoto com primeiro contato em até 30 minutos e sites feitos para o Google e para IAs.</p>
+      <div class="hero__actions">
+        <a href="https://wa.me/5511989531711" class="btn" target="_blank" rel="noopener">Falar com um especialista <svg class="arw" viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+        <a href="#cases" class="btn btn--ghost">Ver cases</a>
+      </div>
+      <ul class="hero__facts">
+        <li>18+ anos de experiência em TI</li>
+        <li>10+ anos com os maiores clientes</li>
+        <li>1º contato em até 30 minutos</li>
+      </ul>
     </div>
+
+    <figure class="noc">
+      <div class="noc__bar">
+        <span class="noc__live"><i class="noc__dot" aria-hidden="true"></i>Ambiente monitorado</span>
+        <span class="noc__demo">Exemplo ilustrativo</span>
+      </div>
+      <svg class="noc__svg noc__svg--wide" viewBox="0 0 600 330" role="img" aria-label="Diagrama: a matriz, protegida por firewall, conecta o backup em nuvem, a filial e a unidade industrial por VPN, com monitoramento Zabbix">
+        <g class="noc__links">
+          <path d="M128 70H220"/>
+          <path d="M296 96V138"/>
+          <path d="M358 165H410C442 165 442 70 474 70"/>
+          <path d="M358 177H404C436 177 436 262 462 262"/>
+          <path d="M234 177H206C178 177 178 262 158 262"/>
+        </g>
+        <g class="noc__flows">
+          <path d="M128 70H220"/>
+          <path d="M296 96V138"/>
+          <path d="M358 165H410C442 165 442 70 474 70"/>
+          <path d="M358 177H404C436 177 436 262 462 262"/>
+          <path d="M234 177H206C178 177 178 262 158 262"/>
+        </g>
+        <g class="noc__tags">
+          <text x="174" y="60">Backup Veeam</text>
+          <text x="404" y="118">VPN IPSec</text>
+          <text x="398" y="232">VPN IPSec</text>
+          <text x="212" y="232">Zabbix</text>
+        </g>
+        <g class="noc__node" transform="translate(16 44)">
+          <rect width="112" height="52" rx="10"/>
+          <path class="noc__glyph" d="M20 33a6 6 0 0 1 0-12a8 8 0 0 1 15-2a6 6 0 0 1 3 14z"/>
+          <text x="50" y="24">Nuvem</text><text class="noc__sub" x="50" y="38">Backup</text>
+          <circle class="noc__ok" cx="101" cy="11" r="3.5"/>
+        </g>
+        <g class="noc__node" transform="translate(220 44)">
+          <rect width="152" height="52" rx="10"/>
+          <path class="noc__glyph" d="M26 14l10 4v8c0 6-4 10-10 12c-6-2-10-6-10-12v-8z"/>
+          <text x="50" y="24">Firewall</text><text class="noc__sub" x="50" y="38">pfSense · FortiGate</text>
+          <circle class="noc__ok" cx="141" cy="11" r="3.5"/>
+        </g>
+        <g class="noc__node noc__node--core" transform="translate(234 138)">
+          <rect width="124" height="66" rx="12"/>
+          <path class="noc__glyph" d="M18 22h22M18 33h22M18 44h22"/>
+          <text x="54" y="31">Matriz</text><text class="noc__sub" x="54" y="46">Servidores</text>
+          <circle class="noc__ok" cx="112" cy="12" r="3.5"/>
+        </g>
+        <g class="noc__node" transform="translate(474 44)">
+          <rect width="110" height="52" rx="10"/>
+          <path class="noc__glyph" d="M16 38V16h18v22M21 22h3M27 22h3M21 29h3M27 29h3"/>
+          <text x="46" y="24">Filial</text><text class="noc__sub" x="46" y="38">Escritório</text>
+          <circle class="noc__ok" cx="99" cy="11" r="3.5"/>
+        </g>
+        <g class="noc__node" transform="translate(462 236)">
+          <rect width="122" height="52" rx="10"/>
+          <path class="noc__glyph" d="M14 38V26l7-5v5l7-5v5l7-5v17z"/>
+          <text x="46" y="24">Galpão</text><text class="noc__sub" x="46" y="38">Wi-Fi Ubiquiti</text>
+          <circle class="noc__ok" cx="111" cy="11" r="3.5"/>
+        </g>
+        <g class="noc__node" transform="translate(16 236)">
+          <rect width="142" height="52" rx="10"/>
+          <path class="noc__glyph" d="M14 28h6l4 9l6-18l4 9h6"/>
+          <text x="50" y="24">Monitor</text><text class="noc__sub" x="50" y="38">Alerta no Telegram</text>
+          <circle class="noc__ok" cx="131" cy="11" r="3.5"/>
+        </g>
+      </svg>
+      <svg class="noc__svg noc__svg--compact" viewBox="0 0 340 250" role="img" aria-label="Diagrama: a matriz, protegida por firewall, conecta o backup em nuvem, a filial e a unidade industrial por VPN, com monitoramento Zabbix">
+        <g class="noc__links">
+          <path d="M70 58C70 84 150 74 150 100"/>
+          <path d="M270 58C270 84 190 74 190 100"/>
+          <path d="M150 154C150 178 70 168 70 192"/>
+          <path d="M190 154C190 178 270 168 270 192"/>
+        </g>
+        <g class="noc__flows">
+          <path d="M70 58C70 84 150 74 150 100"/>
+          <path d="M270 58C270 84 190 74 190 100"/>
+          <path d="M150 154C150 178 70 168 70 192"/>
+          <path d="M190 154C190 178 270 168 270 192"/>
+        </g>
+        <g class="noc__node" transform="translate(10 12)">
+          <rect width="120" height="46" rx="10"/>
+          <text x="60" y="20">Nuvem</text><text class="noc__sub" x="60" y="35">Backup Veeam</text>
+          <circle class="noc__ok" cx="109" cy="11" r="3.5"/>
+        </g>
+        <g class="noc__node" transform="translate(210 12)">
+          <rect width="120" height="46" rx="10"/>
+          <text x="60" y="20">Firewall</text><text class="noc__sub" x="60" y="35">pfSense · FortiGate</text>
+          <circle class="noc__ok" cx="109" cy="11" r="3.5"/>
+        </g>
+        <g class="noc__node noc__node--core" transform="translate(105 100)">
+          <rect width="130" height="54" rx="12"/>
+          <text x="65" y="24">Matriz</text><text class="noc__sub" x="65" y="40">Servidores</text>
+          <circle class="noc__ok" cx="118" cy="12" r="3.5"/>
+        </g>
+        <g class="noc__node" transform="translate(10 192)">
+          <rect width="120" height="46" rx="10"/>
+          <text x="60" y="20">Filial</text><text class="noc__sub" x="60" y="35">VPN IPSec</text>
+          <circle class="noc__ok" cx="109" cy="11" r="3.5"/>
+        </g>
+        <g class="noc__node" transform="translate(210 192)">
+          <rect width="120" height="46" rx="10"/>
+          <text x="60" y="20">Galpão</text><text class="noc__sub" x="60" y="35">Wi-Fi Ubiquiti</text>
+          <circle class="noc__ok" cx="109" cy="11" r="3.5"/>
+        </g>
+      </svg>
+      <div class="noc__tiles">
+        <div class="noc__tile"><span>VPN site-to-site</span><b>Ativa</b></div>
+        <div class="noc__tile"><span>Latência</span><b><em data-noc-latency>12</em> ms</b></div>
+        <div class="noc__tile"><span>Backup Veeam</span><b>OK</b></div>
+        <div class="noc__tile"><span>Alertas abertos</span><b>0</b></div>
+      </div>
+    </figure>
   </div>
-  <figure class="noc">
-    <div class="noc__bar">
-      <span class="noc__live"><i class="noc__dot" aria-hidden="true"></i>Ambiente monitorado</span>
-      <span>Exemplo ilustrativo</span>
-    </div>
-    <svg class="noc__svg" viewBox="0 0 520 250" role="img" aria-label="Diagrama: a matriz conecta o backup em nuvem, a filial e a unidade industrial por VPN">
-      <path class="noc__link" d="M95 125H195"/>
-      <path class="noc__link" d="M255 118C320 118 335 58 385 58"/>
-      <path class="noc__link" d="M255 132C320 132 335 192 385 192"/>
-      <path class="noc__link noc__link--spare" d="M415 80C455 110 455 140 415 170"/>
-      <path class="noc__flow" d="M95 125H195"/>
-      <path class="noc__flow" d="M255 118C320 118 335 58 385 58"/>
-      <path class="noc__flow" d="M255 132C320 132 335 192 385 192"/>
-      <text class="noc__tag" x="145" y="114">Backup Veeam</text>
-      <text class="noc__tag" x="316" y="108">VPN IPSec</text>
-      <text class="noc__tag" x="316" y="150">VPN IPSec</text>
-      <text class="noc__tag" x="468" y="128">link redundante</text>
-      <circle class="noc__packet" r="2.6"><animateMotion dur="2.4s" repeatCount="indefinite" path="M95 125H195"/></circle>
-      <circle class="noc__packet" r="2.6"><animateMotion dur="3s" begin="-1s" repeatCount="indefinite" path="M255 118C320 118 335 58 385 58"/></circle>
-      <circle class="noc__packet" r="2.6"><animateMotion dur="3.4s" begin="-2s" repeatCount="indefinite" path="M385 192C335 192 320 132 255 132"/></circle>
-      <g class="noc__node" transform="translate(65 125)">
-        <rect class="noc__box" x="-30" y="-22" width="60" height="44" rx="9"/>
-        <path class="noc__glyph" d="M-12 8a6 6 0 0 1 0-12a8 8 0 0 1 15-2a6 6 0 0 1 3 14z"/>
-        <circle class="noc__ok" cx="24" cy="-15" r="3.2"/>
-        <text y="40">Nuvem</text>
-      </g>
-      <g class="noc__node" transform="translate(225 125)">
-        <rect class="noc__box" x="-30" y="-22" width="60" height="44" rx="9"/>
-        <path class="noc__glyph" d="M-14 -9h28M-14 0h28M-14 9h28"/>
-        <circle class="noc__ok" cx="24" cy="-15" r="3.2"/>
-        <text y="40">Matriz</text>
-      </g>
-      <g class="noc__node" transform="translate(415 58)">
-        <rect class="noc__box" x="-30" y="-22" width="60" height="44" rx="9"/>
-        <path class="noc__glyph" d="M-12 12V-12h24v24M-6 -5h4M2 -5h4M-6 3h4M2 3h4"/>
-        <circle class="noc__ok" cx="24" cy="-15" r="3.2"/>
-        <text y="-32">Filial</text>
-      </g>
-      <g class="noc__node" transform="translate(415 192)">
-        <rect class="noc__box" x="-30" y="-22" width="60" height="44" rx="9"/>
-        <path class="noc__glyph" d="M-15 12V-2l10-6v6l10-6v6l10-6V12z"/>
-        <circle class="noc__ok" cx="24" cy="-15" r="3.2"/>
-        <text y="40">Unidade industrial</text>
-      </g>
-    </svg>
-    <div class="noc__tiles">
-      <div class="noc__tile"><b>Ativa</b><span>VPN site-to-site</span></div>
-      <div class="noc__tile"><b><em data-noc-latency>12</em> ms</b><span>Latência</span></div>
-      <div class="noc__tile"><b>OK</b><span>Backup Veeam</span></div>
-      <div class="noc__tile"><b>0</b><span>Alertas abertos</span></div>
-    </div>
-    <figcaption class="noc__note">Exemplo de um ambiente monitorado com Zabbix. Os alertas chegam direto no Telegram.</figcaption>
-  </figure>
-  <a href="#servicos" class="hero__scrollhint" aria-label="Rolar para baixo">
-    <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 1v20M8 21l6-6M8 21l-6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
 </header>
 
-
 <main id="conteudo">
-<section class="stats">
+
+<section class="stack" id="tecnologias" aria-label="Plataformas que usamos">
+  <p class="stack__label">Plataformas que usamos</p>
+  <ul class="stack__row">
+    <li><img src="assets/images/logos/microsoft.svg" alt="Microsoft" width="338" height="72" loading="lazy" decoding="async"></li>
+    <li><img src="assets/images/logos/office365.svg" alt="Office 365" width="200" height="64" loading="lazy" decoding="async"></li>
+    <li><img src="assets/images/logos/ubiquiti.svg" alt="Ubiquiti" width="128" height="129" loading="lazy" decoding="async"></li>
+    <li><img src="assets/images/logos/veeam.png" alt="Veeam" width="192" height="108" loading="lazy" decoding="async"></li>
+    <li><img src="assets/images/logos/zimbra.png" alt="Zimbra" width="256" height="56" loading="lazy" decoding="async"></li>
+    <li><img src="assets/images/logos/proxmox.svg" alt="Proxmox" width="1024" height="162" loading="lazy" decoding="async"></li>
+    <li><img src="assets/images/logos/pfsense.svg" alt="pfSense" width="277" height="78" loading="lazy" decoding="async"></li>
+    <li><img src="assets/images/logos/fortinet.svg" alt="Fortinet" width="1024" height="124" loading="lazy" decoding="async"></li>
+    <li><img src="assets/images/logos/eset.svg" alt="ESET" width="182" height="72" loading="lazy" decoding="async"></li>
+  </ul>
+</section>
+
+<section class="stats" aria-label="A DRLSYS em números">
   <div class="stats__grid">
-    <div class="stats__item reveal">
-      <span class="stats__num"><span class="stats__num-value" data-count-to="18">0</span>+</span>
+    <div class="stats__item">
+      <span class="stats__num"><span data-count-to="18">18</span>+</span>
       <span class="stats__label">anos de experiência em TI</span>
     </div>
-    <div class="stats__item reveal">
-      <span class="stats__num"><span class="stats__num-value" data-count-to="10">0</span>+</span>
+    <div class="stats__item">
+      <span class="stats__num"><span data-count-to="10">10</span>+</span>
       <span class="stats__label">anos de parceria com os maiores clientes</span>
     </div>
-    <div class="stats__item reveal">
-      <span class="stats__num"><span class="stats__num-value" data-count-to="30">0</span> min</span>
+    <div class="stats__item">
+      <span class="stats__num"><span data-count-to="30">30</span> min</span>
       <span class="stats__label">para o primeiro contato após o chamado aberto, e imediato em casos urgentes</span>
     </div>
   </div>
 </section>
 
 <section class="services" id="servicos">
-  <div class="services__inner">
-    <p class="section-eyebrow reveal">O QUE FAZEMOS</p>
-    <h2 class="reveal">Soluções Premium</h2>
+  <div class="wrap">
+    <header class="head">
+      <h2>Soluções Premium</h2>
+      <p>Da rede ao site: a infraestrutura de TI da sua empresa sob a responsabilidade de um especialista.</p>
+    </header>
     <div class="services__grid">
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg></span>
-        <h3>Sites Premium</h3>
+      <article class="service">
+        <div class="service__top"><span class="service__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg></span><h3>Sites Premium</h3></div>
         <p>Um site que posiciona a sua empresa. Nossa equipe de marketing cuida de SEO, AEO e GEO para você aparecer no Google e nas IAs.</p>
-        <ul class="service-card__list">
+        <ul class="service__list">
           <li>Site-modelo antes do orçamento</li>
           <li>SEO, AEO e GEO (Google e IAs)</li>
           <li>Blog e painel de admin para atualizar sozinho</li>
           <li><a href="#sites">Veja os modelos e navegue neles</a></li>
         </ul>
       </article>
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M15 15l3.35 3.35" /><path d="M9 15l-3.35 3.35" /><path d="M5.65 5.65l3.35 3.35" /><path d="M18.35 5.65l-3.35 3.35" /></svg></span>
-        <h3>Suporte Completo de Infraestrutura</h3>
+      <article class="service">
+        <div class="service__top"><span class="service__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M15 15l3.35 3.35" /><path d="M9 15l-3.35 3.35" /><path d="M5.65 5.65l3.35 3.35" /><path d="M18.35 5.65l-3.35 3.35" /></svg></span><h3>Suporte Completo de Infraestrutura</h3></div>
         <p>Se a infraestrutura cai, a sua operação para. Por isso o primeiro contato sai em até 30 minutos após o chamado aberto, e casos urgentes têm atendimento imediato.</p>
-        <ul class="service-card__list">
+        <ul class="service__list">
           <li>1º contato em até 30 min após o chamado</li>
           <li>Imediato em casos urgentes</li>
           <li>Atendimento remoto e em campo</li>
           <li>Monitoramento contínuo</li>
         </ul>
       </article>
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8l4 -16l3 8h4" /></svg></span>
-        <h3>Monitoramento</h3>
+      <article class="service">
+        <div class="service__top"><span class="service__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8l4 -16l3 8h4" /></svg></span><h3>Monitoramento</h3></div>
         <p>Zabbix monitorando servidores, rede e links 24/7, com alertas em tempo real direto no Telegram.</p>
-        <ul class="service-card__list">
+        <ul class="service__list">
           <li>Alertas em tempo real no Telegram</li>
           <li>Monitoramento de servidores e links</li>
           <li>Ação antes do problema virar parada</li>
         </ul>
       </article>
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg></span>
-        <h3>E-mail Zimbra Enterprise</h3>
+      <article class="service">
+        <div class="service__top"><span class="service__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /><path d="M3 7l9 6l9 -6" /></svg></span><h3>E-mail Zimbra Enterprise</h3></div>
         <p>Mais barato que Office 365 e Google, e muito melhor que Locaweb.</p>
-        <ul class="service-card__list">
+        <ul class="service__list">
           <li>Migração e configuração</li>
           <li>Antispam e segurança</li>
           <li>Múltiplos domínios</li>
         </ul>
       </article>
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6c0 1.657 3.582 3 8 3s8 -1.343 8 -3s-3.582 -3 -8 -3s-8 1.343 -8 3" /><path d="M4 6v6c0 1.657 3.582 3 8 3c1.118 0 2.183 -.086 3.15 -.241" /><path d="M20 12v-6" /><path d="M4 12v6c0 1.657 3.582 3 8 3c.157 0 .312 -.002 .466 -.005" /><path d="M16 19h6" /><path d="M19 16l3 3l-3 3" /></svg></span>
-        <h3>Backup Veeam</h3>
+      <article class="service">
+        <div class="service__top"><span class="service__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6c0 1.657 3.582 3 8 3s8 -1.343 8 -3s-3.582 -3 -8 -3s-8 1.343 -8 3" /><path d="M4 6v6c0 1.657 3.582 3 8 3c1.118 0 2.183 -.086 3.15 -.241" /><path d="M20 12v-6" /><path d="M4 12v6c0 1.657 3.582 3 8 3c.157 0 .312 -.002 .466 -.005" /><path d="M16 19h6" /><path d="M19 16l3 3l-3 3" /></svg></span><h3>Backup Veeam</h3></div>
         <p>Backup automatizado, pra nunca perder um dado importante.</p>
-        <ul class="service-card__list">
+        <ul class="service__list">
           <li>Backup local e em nuvem</li>
           <li>Rotina automatizada</li>
           <li>Retenção em múltiplas camadas</li>
         </ul>
       </article>
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" /><path d="M15 19l2 2l4 -4" /></svg></span>
-        <h3>Segurança de Perímetro</h3>
+      <article class="service">
+        <div class="service__top"><span class="service__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" /><path d="M15 19l2 2l4 -4" /></svg></span><h3>Segurança de Perímetro</h3></div>
         <p>Firewall pfSense, FortiGate e outras soluções, configuradas e gerenciadas pela DRLSYS.</p>
-        <ul class="service-card__list">
+        <ul class="service__list">
           <li>Firewall de próxima geração</li>
           <li>VPN site-to-site e IPSec</li>
           <li>Filtragem de conteúdo e hardening</li>
         </ul>
       </article>
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-2" /><path d="M3 15a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -2" /><path d="M7 8l0 .01" /><path d="M7 16l0 .01" /><path d="M11 8h6" /><path d="M11 16h6" /></svg></span>
-        <h3>Especialista Microsoft Hyper-V e Proxmox</h3>
+      <article class="service">
+        <div class="service__top"><span class="service__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3v-2" /><path d="M3 15a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -2" /><path d="M7 8l0 .01" /><path d="M7 16l0 .01" /><path d="M11 8h6" /><path d="M11 16h6" /></svg></span><h3>Especialista Microsoft <span class="nb">Hyper-V</span> e Proxmox</h3></div>
         <p>Servidores dimensionados pro tamanho da sua operação, em Hyper-V ou Proxmox.</p>
-        <ul class="service-card__list">
+        <ul class="service__list">
           <li>Consolidação de servidores</li>
           <li>Migração física/virtual</li>
           <li>Alta disponibilidade</li>
         </ul>
       </article>
-      <article class="service-card reveal">
-        <span class="service-card__icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12l0 .01" /><path d="M14.828 9.172a4 4 0 0 1 0 5.656" /><path d="M17.657 6.343a8 8 0 0 1 0 11.314" /><path d="M9.168 14.828a4 4 0 0 1 0 -5.656" /><path d="M6.337 17.657a8 8 0 0 1 0 -11.314" /></svg></span>
-        <h3>Redes, Wi-Fi e VPN</h3>
+      <article class="service">
+        <div class="service__top"><span class="service__icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12l0 .01" /><path d="M14.828 9.172a4 4 0 0 1 0 5.656" /><path d="M17.657 6.343a8 8 0 0 1 0 11.314" /><path d="M9.168 14.828a4 4 0 0 1 0 -5.656" /><path d="M6.337 17.657a8 8 0 0 1 0 -11.314" /></svg></span><h3>Redes, Wi-Fi e VPN</h3></div>
         <p>Cabeamento estruturado, Wi-Fi Ubiquiti de alta densidade e VPN conectando escritórios, filiais e galpões.</p>
-        <ul class="service-card__list">
+        <ul class="service__list">
           <li>Projetos de Wi-Fi para escritórios e galpões</li>
           <li>Cabeamento estruturado e VLANs</li>
           <li>VPN site-to-site e acesso remoto seguro</li>
@@ -381,181 +447,147 @@
   </div>
 </section>
 
-<section class="stack" id="tecnologias">
-  <p class="section-eyebrow reveal">TECNOLOGIAS</p>
-  <h2 class="reveal">Plataformas que usamos.</h2>
-  <div class="stack__row reveal">
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/microsoft.svg" alt="Microsoft" width="338" height="72" loading="lazy" decoding="async"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/office365.svg" alt="Office 365" width="200" height="64" loading="lazy" decoding="async"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/ubiquiti.svg" alt="Ubiquiti" width="128" height="129" loading="lazy" decoding="async"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/veeam.png" alt="Veeam" width="192" height="108" loading="lazy" decoding="async"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/zimbra.png" alt="Zimbra" width="256" height="56" loading="lazy" decoding="async"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/proxmox.svg" alt="Proxmox" width="1024" height="162" loading="lazy" decoding="async"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/pfsense.svg" alt="pfSense" width="277" height="78" loading="lazy" decoding="async"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/fortinet.svg" alt="Fortinet" width="1024" height="124" loading="lazy" decoding="async"></span>
-    <span class="portfolio-logo-chip"><img src="assets/images/logos/eset.svg" alt="ESET" width="182" height="72" loading="lazy" decoding="async"></span>
-  </div>
-</section>
-
 <section class="cases" id="cases">
-  <div class="cases__head">
-    <p class="section-eyebrow reveal">CASES</p>
-    <h2 class="reveal">Desafios reais, soluções aplicadas.</h2>
-    <p class="cases__intro reveal">Quatro operações de setores diferentes, todas com a mesma exigência: a infraestrutura não pode parar.</p>
-    <div class="cases__tabs reveal">
+  <div class="wrap">
+    <header class="head">
+      <h2>Desafios reais, soluções aplicadas.</h2>
+      <p>Quatro operações de setores diferentes, todas com a mesma exigência: a infraestrutura não pode parar.</p>
+    </header>
+    <nav class="cases__tabs" aria-label="Cases">
       <a href="#case-01">01 · Metalloys · Schem · Nicomo</a>
       <a href="#case-02">02 · Sulmedic</a>
       <a href="#case-03">03 · Studio Vero</a>
       <a href="#case-04">04 · OnStage Academy</a>
-    </div>
-  </div>
+    </nav>
 
-  <article class="case-block reveal" id="case-01">
-    <div class="case-block__top">
-      <span class="case-block__num">01</span>
-      <h3>Unificação de rede entre 3 empresas do grupo</h3>
-      <div class="case-block__tags"><span>CASE</span><span>INDÚSTRIA</span></div>
-    </div>
-    <div class="case-block__body">
-      <div class="case-block__stat">
-        <span class="case-block__stat-num">10+</span>
-        <span class="case-block__stat-label">anos de parceria contínua</span>
+    <article class="case" id="case-01">
+      <div class="case__panel">
+        <span class="case__no">Case 01 · Indústria</span>
+        <b class="case__num">10+</b>
+        <span class="case__label">anos de parceria contínua</span>
         <p>Suporte ao grupo Metalloys, Schem e Nicomo sem interrupção de operação.</p>
       </div>
-      <div class="case-block__text">
-        <h4>VISÃO GERAL</h4>
+      <div class="case__text">
+        <h3>Unificação de rede entre 3 empresas do grupo</h3>
+        <h4>Visão geral</h4>
         <p>Metalloys, Schem e Nicomo operam como um grupo industrial com várias unidades, mas cada empresa tinha sua própria estrutura de TI. A DRLSYS uniu a operação numa única arquitetura e acompanha o crescimento do grupo há mais de 10 anos.</p>
-        <h4>PROBLEMA</h4>
+        <h4>Problema</h4>
         <ul>
           <li>3 empresas com redes e domínios separados, sem padronização</li>
           <li>Sem VPN segura entre matriz e filiais</li>
           <li>Backup e e-mail corporativo sem redundância</li>
         </ul>
-        <h4>ABORDAGEM</h4>
+        <h4>Abordagem</h4>
         <ul>
           <li>Active Directory com 3 domínios interligados, sobre virtualização Proxmox</li>
           <li>VPN site-to-site IPSec conectando todas as unidades, com OpenVPN para acesso remoto</li>
           <li>Firewall dedicado, backup Veeam e e-mail corporativo Zimbra</li>
           <li>Rede Wi-Fi Ubiquiti e links de internet redundantes em todas as unidades</li>
         </ul>
-        <a class="case-block__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <span aria-hidden="true">→</span></a>
+        <a class="link" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <svg class="arw" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <article class="case-block reveal" id="case-02">
-    <div class="case-block__top">
-      <span class="case-block__num">02</span>
-      <h3>Wi-Fi de alta densidade em galpão industrial</h3>
-      <div class="case-block__tags"><span>CASE</span><span>INDÚSTRIA</span></div>
-    </div>
-    <div class="case-block__body">
-      <div class="case-block__stat">
-        <span class="case-block__stat-num case-block__stat-num--text">Alta densidade</span>
-        <span class="case-block__stat-label">Wi-Fi estável em ambiente industrial</span>
+    <article class="case" id="case-02">
+      <div class="case__panel">
+        <span class="case__no">Case 02 · Indústria</span>
+        <b class="case__num case__num--text">Alta densidade</b>
+        <span class="case__label">Wi-Fi estável em ambiente industrial</span>
         <p>Cobertura mesmo com obstáculos metálicos e interferência do galpão.</p>
       </div>
-      <div class="case-block__text">
-        <h4>VISÃO GERAL</h4>
+      <div class="case__text">
+        <h3>Wi-Fi de alta densidade em galpão industrial</h3>
+        <h4>Visão geral</h4>
         <p>Sulmedic opera em um galpão industrial, onde Wi-Fi comum não aguenta a distância, os obstáculos metálicos e o volume de dispositivos conectados.</p>
-        <h4>PROBLEMA</h4>
+        <h4>Problema</h4>
         <ul>
           <li>Wi-Fi convencional sem alcance nem estabilidade no galpão</li>
           <li>Interferência de estruturas metálicas e distância entre pontos</li>
           <li>Necessidade de rede confiável para toda a operação</li>
         </ul>
-        <h4>ABORDAGEM</h4>
+        <h4>Abordagem</h4>
         <ul>
           <li>Projeto de rede Wi-Fi Ubiquiti de alta densidade</li>
           <li>Pontos de acesso posicionados para cobertura industrial real</li>
           <li>Rede testada e validada em toda a área operacional</li>
         </ul>
-        <a class="case-block__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <span aria-hidden="true">→</span></a>
+        <a class="link" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <svg class="arw" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <article class="case-block reveal" id="case-03">
-    <div class="case-block__top">
-      <span class="case-block__num">03</span>
-      <h3>Backup corporativo em ambiente misto Mac e Windows</h3>
-      <div class="case-block__tags"><span>CASE</span><span>SERVIÇOS</span></div>
-    </div>
-    <div class="case-block__body">
-      <div class="case-block__stat">
-        <span class="case-block__stat-num">2</span>
-        <span class="case-block__stat-label">sistemas operacionais numa rede só</span>
+    <article class="case" id="case-03">
+      <div class="case__panel">
+        <span class="case__no">Case 03 · Serviços</span>
+        <b class="case__num">2</b>
+        <span class="case__label">sistemas operacionais numa rede só</span>
         <p>Mac e Windows funcionando juntos, sem atrito.</p>
       </div>
-      <div class="case-block__text">
-        <h4>VISÃO GERAL</h4>
+      <div class="case__text">
+        <h3>Backup corporativo em ambiente misto Mac e Windows</h3>
+        <h4>Visão geral</h4>
         <p>Studio Vero precisava de um storage de backup robusto para um ambiente misto de Mac e Windows na mesma rede.</p>
-        <h4>PROBLEMA</h4>
+        <h4>Problema</h4>
         <ul>
           <li>Dados sem rotina de backup confiável</li>
           <li>Ambiente misto Mac + Windows difícil de padronizar</li>
           <li>Risco de perda de dados sem redundância</li>
         </ul>
-        <h4>ABORDAGEM</h4>
+        <h4>Abordagem</h4>
         <ul>
           <li>Storage de backup corporativo com NAS interno</li>
           <li>Rotina de backup automatizada</li>
           <li>Mac e Windows na mesma rede, funcionando sem conflito</li>
         </ul>
-        <a class="case-block__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <span aria-hidden="true">→</span></a>
+        <a class="link" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <svg class="arw" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
       </div>
-    </div>
-  </article>
+    </article>
 
-  <article class="case-block reveal" id="case-04">
-    <div class="case-block__top">
-      <span class="case-block__num">04</span>
-      <h3>Todo o grupo migrado para a nuvem Microsoft</h3>
-      <div class="case-block__tags"><span>CASE</span><span>INTERNACIONAL</span></div>
-    </div>
-    <div class="case-block__body">
-      <div class="case-block__stat">
-        <span class="case-block__stat-num">100%</span>
-        <span class="case-block__stat-label">do grupo migrado para Office 365</span>
+    <article class="case" id="case-04">
+      <div class="case__panel">
+        <span class="case__no">Case 04 · Internacional</span>
+        <b class="case__num">100%</b>
+        <span class="case__label">do grupo migrado para Office 365</span>
         <p>E-mail e arquivos padronizados em todas as unidades.</p>
       </div>
-      <div class="case-block__text">
-        <h4>VISÃO GERAL</h4>
+      <div class="case__text">
+        <h3>Todo o grupo migrado para a nuvem Microsoft</h3>
+        <h4>Visão geral</h4>
         <p>OnStage Academy é um cliente internacional que precisava padronizar e-mail e armazenamento em nuvem para todo o grupo, com suporte remoto.</p>
-        <h4>PROBLEMA</h4>
+        <h4>Problema</h4>
         <ul>
           <li>E-mail e arquivos sem padronização entre as unidades do grupo</li>
           <li>Acesso a documentos dependente de servidores locais</li>
           <li>Necessidade de suporte remoto para operação internacional</li>
         </ul>
-        <h4>ABORDAGEM</h4>
+        <h4>Abordagem</h4>
         <ul>
           <li>Implantação de Office 365 para todo o grupo</li>
           <li>OneDrive configurado e integrado para todos os usuários</li>
           <li>Padronização e suporte remoto contínuo</li>
         </ul>
-        <a class="case-block__cta" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <span aria-hidden="true">→</span></a>
+        <a class="link" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Fale com um especialista <svg class="arw" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
       </div>
-    </div>
-  </article>
+    </article>
+  </div>
 </section>
 
 <section class="showcase" id="sites">
-  <div class="showcase__inner">
-    <p class="section-eyebrow reveal">SITES SOB MEDIDA</p>
-    <h2 class="reveal">Veja o seu site antes de decidir.</h2>
+  <div class="wrap">
+    <header class="head">
+      <h2>Veja o seu site antes de decidir.</h2>
+    </header>
     <div class="showcase__points">
-      <div class="showcase__point reveal">
+      <div class="showcase__point">
         <h3>Feito pensando em SEO e em IA</h3>
         <p>Nossos sites saem com dados estruturados, sitemap, títulos hierarquizados, carregamento rápido e um arquivo llms.txt, para que o Google (SEO) e as IAs que respondem perguntas (LLMs) entendam o que a empresa faz.</p>
       </div>
-      <div class="showcase__point reveal">
+      <div class="showcase__point">
         <h3>Primeiro o modelo, depois o orçamento</h3>
         <p>Criamos um site-modelo para o seu negócio. Se você gostar da ideia, aí sim enviamos o orçamento. Escolha um dos modelos abaixo e navegue nele aqui mesmo.</p>
       </div>
     </div>
-    <div class="showcase__picker reveal">
-      <label for="showcaseSelect" class="showcase__picker-label">Olhe alguns modelos que fizemos <span aria-hidden="true">↓</span></label>
+    <div class="showcase__picker">
+      <label for="showcaseSelect" class="showcase__picker-label">Olhe alguns modelos que fizemos <svg class="arw arw--down" viewBox="0 0 20 20" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></label>
       <select id="showcaseSelect" class="showcase__select">
         <option value="" selected>Clique aqui e escolha um modelo…</option>
         <option value="https://hanaoka.com.br/">Hanaoka (no ar)</option>
@@ -564,108 +596,115 @@
         <option value="https://jgdini.github.io/proposta-anunciantes-premiapao/exclusivo.html">Premia Pão: campanha exclusiva</option>
         <option value="https://jgdini.github.io/aclaris/">Aclaris (modelo)</option>
         <option value="https://jgdini.github.io/stella-resinas/">Stella Resinas (modelo)</option>
-        <option value="https://liderdetravessias.com.br/">Líder de Travessias (no ar)</option>
-        <option value="https://marcelolusardo.com.br/">Marcelo Lusardo (no ar)</option>
+        <option value="https://jgdini.github.io/asr-consult/index.html">ASR Consult (modelo)</option>
       </select>
     </div>
     <div class="showcase__viewer" id="showcaseViewer" hidden>
       <div class="showcase__bar">
         <span class="showcase__dots" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="showcase__url" id="showcaseUrl"></span>
-        <a class="showcase__open" id="showcaseOpen" href="#" target="_blank" rel="noopener">Abrir em nova aba ↗</a>
+        <a class="showcase__open" id="showcaseOpen" href="#" target="_blank" rel="noopener">Abrir em nova aba <svg class="arw arw--out" viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
       </div>
       <div class="showcase__stage">
         <span class="showcase__loading">Carregando…</span>
         <iframe id="showcaseFrame" class="showcase__frame" title="Pré-visualização do site" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
       </div>
-      <a class="showcase__mobile-open" id="showcaseMobileOpen" href="#" target="_blank" rel="noopener">Abrir site em nova aba ↗</a>
+      <a class="showcase__mobile-open" id="showcaseMobileOpen" href="#" target="_blank" rel="noopener">Abrir site em nova aba <svg class="arw arw--out" viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
     </div>
   </div>
 </section>
 
 <section class="partners" id="parceiros">
-  <h2 class="section-eyebrow reveal">PARCEIROS ESTRATÉGICOS</h2>
-  <div class="partners__row reveal">
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/asrconsult-navy.png" alt="ASR Consult" width="256" height="74" loading="lazy" decoding="async"></span><span class="partners__label">Consultoria TOTVS · Protheus</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/thorsoftware.png" alt="Thor Software" width="278" height="52" loading="lazy" decoding="async"></span><span class="partners__label">ERP Odin · Mjölnir</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/zucchetti.svg" alt="Zucchetti" width="136" height="30" loading="lazy" decoding="async"></span><span class="partners__label">ERP Zucchetti</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/penso.svg" alt="Penso Tecnologia" width="104" height="25" loading="lazy" decoding="async"></span><span class="partners__label">E-mail Zimbra whitelabel</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/sqi.png" alt="SQI" width="96" height="96" loading="lazy" decoding="async"></span><span class="partners__label">Impressoras outsourcing</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/advance.png" alt="Advance" width="96" height="96" loading="lazy" decoding="async"></span><span class="partners__label">Telefonia e CRM</span></span>
-    <span class="partners__item"><span class="portfolio-logo-chip"><img src="assets/images/logos/synergy.png" alt="Synergy Tecnologia" width="150" height="113" loading="lazy" decoding="async"></span><span class="partners__label">Telefonia e CRM</span></span>
+  <div class="wrap">
+    <header class="head">
+      <h2>Parceiros Estratégicos</h2>
+    </header>
+    <ul class="partners__row">
+      <li class="partner"><span class="partner__logo"><img src="assets/images/logos/asrconsult-navy.png" alt="ASR Consult" width="256" height="74" loading="lazy" decoding="async"></span><span class="partner__label">Consultoria TOTVS · Protheus</span></li>
+      <li class="partner"><span class="partner__logo"><img src="assets/images/logos/thorsoftware.png" alt="Thor Software" width="278" height="52" loading="lazy" decoding="async"></span><span class="partner__label">ERP Odin · Mjölnir</span></li>
+      <li class="partner"><span class="partner__logo"><img src="assets/images/logos/zucchetti.svg" alt="Zucchetti" width="136" height="30" loading="lazy" decoding="async"></span><span class="partner__label">ERP Zucchetti</span></li>
+      <li class="partner"><span class="partner__logo"><img src="assets/images/logos/penso.svg" alt="Penso Tecnologia" width="104" height="25" loading="lazy" decoding="async"></span><span class="partner__label">E-mail Zimbra whitelabel</span></li>
+      <li class="partner"><span class="partner__logo"><img src="assets/images/logos/sqi.png" alt="SQI" width="96" height="96" loading="lazy" decoding="async"></span><span class="partner__label">Impressoras outsourcing</span></li>
+      <li class="partner"><span class="partner__logo"><img src="assets/images/logos/advance.png" alt="Advance" width="96" height="96" loading="lazy" decoding="async"></span><span class="partner__label">Telefonia e CRM</span></li>
+      <li class="partner"><span class="partner__logo"><img src="assets/images/logos/synergy.png" alt="Synergy Tecnologia" width="150" height="113" loading="lazy" decoding="async"></span><span class="partner__label">Telefonia e CRM</span></li>
+    </ul>
   </div>
 </section>
 
 <section class="about" id="sobre">
-  <div class="about__inner">
-    <h2 class="section-eyebrow reveal">SOBRE</h2>
-    <p class="about__quote reveal">"João Dini: 18+ anos de experiência em TI. Especialista em redes, servidores e segurança para empresas de médio e grande porte. Atendo empresas em São Paulo e clientes internacionais."</p>
+  <div class="wrap about__inner">
+    <h2>Sobre</h2>
+    <div class="about__body">
+      <p class="about__lead">João Dini: 18+ anos de experiência em TI. Especialista em redes, servidores e segurança para empresas de médio e grande porte. Atendo empresas em São Paulo e clientes internacionais.</p>
+      <dl class="about__facts">
+        <div><dt>Base</dt><dd>Cotia / SP</dd></div>
+        <div><dt>Atendimento</dt><dd>Remoto e em campo</dd></div>
+        <div><dt>Primeiro contato</dt><dd>Até 30 minutos</dd></div>
+      </dl>
+    </div>
   </div>
 </section>
 
 <section class="process" id="como-trabalhamos">
-  <div class="process__inner">
-  <p class="section-eyebrow reveal">COMO TRABALHAMOS</p>
-  <h2 class="reveal">Como um projeto acontece.</h2>
-  <div class="process__grid">
-    <div class="process__item reveal">
-      <span class="process__num">01</span>
-      <h3>Diagnóstico</h3>
-      <p>Mapeamos o ambiente atual, os riscos e o que precisa mudar.</p>
-    </div>
-    <div class="process__item reveal">
-      <span class="process__num">02</span>
-      <h3>Plano</h3>
-      <p>Definimos arquitetura e prioridades, dentro do orçamento e sem parar a operação.</p>
-    </div>
-    <div class="process__item reveal">
-      <span class="process__num">03</span>
-      <h3>Implementação</h3>
-      <p>Executamos com acompanhamento próximo e validamos cada entrega.</p>
-    </div>
-    <div class="process__item reveal">
-      <span class="process__num">04</span>
-      <h3>Suporte contínuo</h3>
-      <p>Monitoramos e ajustamos a infraestrutura conforme o negócio muda.</p>
-    </div>
-  </div>
+  <div class="wrap">
+    <header class="head">
+      <h2>Como um projeto acontece.</h2>
+    </header>
+    <ol class="process__list">
+      <li class="process__step">
+        <h3>Diagnóstico</h3>
+        <p>Mapeamos o ambiente atual, os riscos e o que precisa mudar.</p>
+      </li>
+      <li class="process__step">
+        <h3>Plano</h3>
+        <p>Definimos arquitetura e prioridades, dentro do orçamento e sem parar a operação.</p>
+      </li>
+      <li class="process__step">
+        <h3>Implementação</h3>
+        <p>Executamos com acompanhamento próximo e validamos cada entrega.</p>
+      </li>
+      <li class="process__step">
+        <h3>Suporte contínuo</h3>
+        <p>Monitoramos e ajustamos a infraestrutura conforme o negócio muda.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
 <section class="faq" id="faq">
-  <div class="faq__inner">
-  <p class="section-eyebrow reveal">DÚVIDAS FREQUENTES</p>
-  <h2 class="reveal">Antes de começar.</h2>
-  <div class="faq__list">
-    <details class="faq__item reveal">
-      <summary>Vocês atendem empresas fora de São Paulo?</summary>
-      <p>Sim. Atendemos clientes em São Paulo com suporte remoto e em campo, e clientes internacionais de forma 100% remota.</p>
-    </details>
-    <details class="faq__item reveal">
-      <summary>Já tenho infraestrutura montada. Vocês assumem o suporte?</summary>
-      <p>Sim. Fazemos o diagnóstico do ambiente existente e assumimos a partir dali, sem precisar recomeçar do zero.</p>
-    </details>
-    <details class="faq__item reveal">
-      <summary>Quanto tempo leva um projeto de infraestrutura?</summary>
-      <p>Depende do escopo. Ajustes pequenos levam alguns dias e projetos completos podem levar algumas semanas.</p>
-    </details>
-    <details class="faq__item reveal">
-      <summary>Como funciona o suporte depois da entrega?</summary>
-      <p>Suporte contínuo, com atendimento remoto e em campo, SLA de 30 minutos após o chamado aberto para o primeiro contato e atendimento imediato em casos urgentes.</p>
-    </details>
-  </div>
+  <div class="wrap faq__inner">
+    <h2>Antes de começar.</h2>
+    <div class="faq__list">
+      <details class="faq__item">
+        <summary>Vocês atendem empresas fora de São Paulo?</summary>
+        <p>Sim. Atendemos clientes em São Paulo com suporte remoto e em campo, e clientes internacionais de forma 100% remota.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Já tenho infraestrutura montada. Vocês assumem o suporte?</summary>
+        <p>Sim. Fazemos o diagnóstico do ambiente existente e assumimos a partir dali, sem precisar recomeçar do zero.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Quanto tempo leva um projeto de infraestrutura?</summary>
+        <p>Depende do escopo. Ajustes pequenos levam alguns dias e projetos completos podem levar algumas semanas.</p>
+      </details>
+      <details class="faq__item">
+        <summary>Como funciona o suporte depois da entrega?</summary>
+        <p>Suporte contínuo, com atendimento remoto e em campo, SLA de 30 minutos após o chamado aberto para o primeiro contato e atendimento imediato em casos urgentes.</p>
+      </details>
+    </div>
   </div>
 </section>
 
 <section class="contact" id="contato">
-  <div class="contact__inner">
-    <p class="section-eyebrow reveal">PRÓXIMO PASSO</p>
-    <h2 class="reveal">Vamos colocar sua infraestrutura em ordem?</h2>
-    <a class="contact__cta reveal" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Falar no WhatsApp · (11) 98953-1711</a>
-    <div class="contact__meta reveal">
-      <a href="mailto:joao@drlsys.com">joao@drlsys.com</a>
-      <a href="tel:+5511989531711">(11) 98953-1711</a>
-      <span>Cotia / SP</span>
+  <div class="wrap contact__inner">
+    <h2>Vamos colocar sua infraestrutura em ordem?</h2>
+    <div class="contact__side">
+      <a class="btn btn--light" href="https://wa.me/5511989531711" target="_blank" rel="noopener">Falar no WhatsApp <span class="nb">· (11) 98953-1711</span></a>
+      <ul class="contact__meta">
+        <li><a href="mailto:joao@drlsys.com">joao@drlsys.com</a></li>
+        <li><a href="tel:+5511989531711">(11) 98953-1711</a></li>
+        <li>Cotia / SP</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -676,6 +715,6 @@
   <span>© 2026 DRLSYS. Todos os direitos reservados. Desenvolvido por <a class="footer__halo" href="https://haloconsulting.com.br/" target="_blank" rel="noopener" aria-label="Halo Company"><svg class="footer__halo-sym" viewBox="0 0 32 32" width="20" height="20" aria-hidden="true"><g transform="rotate(-90 16 16)" fill="none" stroke-width="3.2" stroke-linecap="round"><circle cx="16" cy="16" r="11" pathLength="300" stroke="#E0506F" stroke-dasharray="86 214"/><circle cx="16" cy="16" r="11" pathLength="300" stroke="#E7C493" stroke-dasharray="86 214" stroke-dashoffset="-100"/><circle cx="16" cy="16" r="11" pathLength="300" stroke="#F8F3EB" stroke-dasharray="86 214" stroke-dashoffset="-200"/></g></svg><span>halo <small>company</small></span></a></span>
 </footer>
 
-<script src="assets/js/main.js?v=20261103a"></script>
+<script src="assets/js/main.js?v=20261117a" defer></script>
 </body>
 </html>

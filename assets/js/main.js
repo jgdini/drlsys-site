@@ -1,95 +1,40 @@
-/**
- * DRLSYS — portfolio site controller
- *
- * Three small, independent pieces: (1) nav background swap + top progress rail
- * on scroll, (2) a generic scroll-reveal (IntersectionObserver, fade+rise,
- * staggered by DOM order) applied to every `.reveal` element, (3) the
- * Tajima-style numbered portfolio index — click (or hover, on pointer devices)
- * an item in the left list to swap the active case shown on the right.
- */
 (function () {
   "use strict";
 
-  var clamp = function (v, min, max) { return Math.max(min, Math.min(max, v)); };
+  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---------- nav + progress rail ---------- */
+  /* ---------- navegação: sombra ao rolar e menu no celular ---------- */
   var nav = document.getElementById("nav");
-  var pageProgress = document.getElementById("pageProgress");
-  var ticking = false;
-
-  function pageProgressValue() {
-    var doc = document.documentElement;
-    var total = doc.scrollHeight - window.innerHeight;
-    if (total <= 0) return 0;
-    return clamp(window.scrollY / total, 0, 1);
-  }
-
-  function onScrollUpdate() {
-    ticking = false;
-    if (pageProgress) pageProgress.style.width = (pageProgressValue() * 100).toFixed(2) + "%";
-    if (nav) nav.classList.toggle("is-scrolled", window.scrollY > 40);
-  }
-
-  function onScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(onScrollUpdate);
-      ticking = true;
-    }
-  }
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll);
-  document.addEventListener("DOMContentLoaded", onScrollUpdate);
-  onScrollUpdate();
-
-  /* ---------- menu mobile ---------- */
   var navToggle = document.getElementById("navToggle");
-  if (nav && navToggle) {
+  var navMenu = document.getElementById("navMenu");
+  if (nav) {
+    var ticking = false;
+    var onScroll = function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(function () {
+        nav.classList.toggle("is-scrolled", window.scrollY > 8);
+        ticking = false;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+  if (nav && navToggle && navMenu) {
     var setMenu = function (open) {
       nav.classList.toggle("is-open", open);
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
       navToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
     };
     navToggle.addEventListener("click", function () { setMenu(!nav.classList.contains("is-open")); });
-    document.getElementById("navMenu").addEventListener("click", function (e) {
+    navMenu.addEventListener("click", function (e) {
       if (e.target.closest && e.target.closest("a")) setMenu(false);
     });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
-    window.addEventListener("resize", function () { if (window.innerWidth > 760) setMenu(false); });
+    window.addEventListener("resize", function () { if (window.innerWidth > 960) setMenu(false); });
   }
 
-  /* ---------- painel do hero: latência ilustrativa ---------- */
-  var latencyEl = document.querySelector("[data-noc-latency]");
-  if (latencyEl && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
-    window.setInterval(function () { latencyEl.textContent = 10 + Math.floor(Math.random() * 6); }, 1800);
-  }
-
-  /* ---------- scroll reveal ---------- */
-  var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-  if (revealEls.length && "IntersectionObserver" in window) {
-    // stagger siblings that reveal together (same parent) by DOM order
-    var staggerCounters = new WeakMap();
-    revealEls.forEach(function (el) {
-      var parent = el.parentElement;
-      var count = staggerCounters.get(parent) || 0;
-      el.style.transitionDelay = Math.min(count * 70, 420) + "ms";
-      staggerCounters.set(parent, count + 1);
-    });
-
-    var revealObserver = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
-
-    revealEls.forEach(function (el) { revealObserver.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("is-visible"); });
-  }
-
-  /* ---------- showcase: site viewer dropdown ---------- */
+  /* ---------- seletor de modelos de sites ---------- */
   var scSelect = document.getElementById("showcaseSelect");
   var scFrame = document.getElementById("showcaseFrame");
   if (scSelect && scFrame) {
@@ -97,7 +42,7 @@
     var scOpen = document.getElementById("showcaseOpen");
     var scMobileOpen = document.getElementById("showcaseMobileOpen");
     var scViewer = document.getElementById("showcaseViewer");
-    var scSync = function () {
+    scSelect.addEventListener("change", function () {
       var url = scSelect.value;
       if (!url) { scViewer.hidden = true; scFrame.removeAttribute("src"); return; }
       scViewer.hidden = false;
@@ -105,36 +50,52 @@
       scOpen.href = url;
       scMobileOpen.href = url;
       scFrame.src = url;
-    };
-    scSelect.addEventListener("change", scSync);
+    });
   }
 
-  /* ---------- stats count-up (0 → target, once, when scrolled into view) ---------- */
-  var countEls = Array.prototype.slice.call(document.querySelectorAll("[data-count-to]"));
-  function runCountUp(el) {
-    var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
-    var duration = 1200;
-    var start = null;
-    function step(timestamp) {
-      if (start === null) start = timestamp;
-      var progress = Math.min((timestamp - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target);
-      if (progress < 1) window.requestAnimationFrame(step);
-    }
-    window.requestAnimationFrame(step);
-  }
-  if (countEls.length && "IntersectionObserver" in window) {
-    var countObserver = new IntersectionObserver(function (entries) {
+  if (reducedMotion) return;
+
+  /* ---------- números: contam uma vez ao entrar na tela ---------- */
+  var counters = Array.prototype.slice.call(document.querySelectorAll("[data-count-to]"));
+  if (counters.length && "IntersectionObserver" in window) {
+    var run = function (el) {
+      var target = parseInt(el.getAttribute("data-count-to"), 10) || 0;
+      var start = null;
+      var step = function (t) {
+        if (start === null) start = t;
+        var p = Math.min((t - start) / 1100, 1);
+        el.textContent = Math.round((1 - Math.pow(1 - p, 3)) * target);
+        if (p < 1) window.requestAnimationFrame(step);
+      };
+      window.requestAnimationFrame(step);
+    };
+    var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        runCountUp(entry.target);
-        countObserver.unobserve(entry.target);
+        run(entry.target);
+        observer.unobserve(entry.target);
       });
-    }, { threshold: 0.4 });
-    countEls.forEach(function (el) { countObserver.observe(el); });
-  } else {
-    countEls.forEach(function (el) { el.textContent = el.getAttribute("data-count-to"); });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { observer.observe(el); });
   }
 
+  /* ---------- linha do tempo do projeto: desenha e acende as etapas ao entrar na tela ---------- */
+  var timeline = document.querySelector(".process__list");
+  if (timeline && "IntersectionObserver" in window) {
+    timeline.classList.add("js-anim");
+    var timelineObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        timeline.classList.add("is-on");
+        timelineObserver.disconnect();
+      });
+    }, { threshold: 0.2 });
+    timelineObserver.observe(timeline);
+  }
+
+  /* ---------- painel do hero: latência ilustrativa ---------- */
+  var latencyEl = document.querySelector("[data-noc-latency]");
+  if (latencyEl) {
+    window.setInterval(function () { latencyEl.textContent = 10 + Math.floor(Math.random() * 6); }, 2200);
+  }
 })();
