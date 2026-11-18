@@ -42,14 +42,30 @@
     var scOpen = document.getElementById("showcaseOpen");
     var scMobileOpen = document.getElementById("showcaseMobileOpen");
     var scViewer = document.getElementById("showcaseViewer");
+    var scShot = document.getElementById("showcaseShot");
+    var scShotImg = document.getElementById("showcaseShotImg");
     scSelect.addEventListener("change", function () {
       var url = scSelect.value;
       if (!url) { scViewer.hidden = true; scFrame.removeAttribute("src"); return; }
+      var option = scSelect.options[scSelect.selectedIndex];
+      // sites que não aceitam ser exibidos dentro de outro site mostram uma imagem com link
+      var preview = option.getAttribute("data-preview");
       scViewer.hidden = false;
       scUrl.textContent = url.replace(/^https?:\/\//, "").replace(/\/$/, "");
       scOpen.href = url;
       scMobileOpen.href = url;
-      scFrame.src = url;
+      if (preview) {
+        scFrame.removeAttribute("src");
+        scFrame.hidden = true;
+        scShotImg.src = preview;
+        scShotImg.alt = "Página inicial do site " + option.textContent.replace(/\s*\(.*\)$/, "");
+        scShot.href = url;
+        scShot.hidden = false;
+      } else {
+        scShot.hidden = true;
+        scFrame.hidden = false;
+        scFrame.src = url;
+      }
     });
   }
 
